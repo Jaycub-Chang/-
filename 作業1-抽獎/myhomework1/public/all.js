@@ -52,7 +52,6 @@ pickNumber.addEventListener('click', () => {
   setTimeout(() => {
     //spinner end
     isLoading = false;
-    spinnerDisplay(isLoading);
 
     // 畫面呈現
     let display = `<h3>獎品號碼：${awardNumber[0]}</h3>`;
@@ -114,7 +113,7 @@ pickNumber.addEventListener('click', () => {
 
     // 移出已經選到的號碼(陣列第一個)，並洗牌
     awardNumber.shift();
-    awardNumber = [...shuffle(awardNumber)];
+    awardNumber = shuffle(awardNumber);
     console.log(awardNumber);
     console.log(awardNumber[0]);
 

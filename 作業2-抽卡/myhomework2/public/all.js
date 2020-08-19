@@ -26,7 +26,7 @@ function shuffle(array) {
   return array;
 }
 
-awardNumber = [...shuffle(awardNumber)];
+awardNumber = shuffle(awardNumber);
 
 // spinner
 let isLoading = false;
@@ -49,7 +49,7 @@ pickNumber.addEventListener('click', () => {
   displaySpinner(isLoading);
 
   // 只洗牌，不移出(無限卡牌)。抽卡前先洗
-  awardNumber = [...shuffle(awardNumber)];
+  awardNumber = shuffle(awardNumber);
   console.log(awardNumber);
 
   // 畫面呈現
@@ -57,7 +57,6 @@ pickNumber.addEventListener('click', () => {
   setTimeout(() => {
     // close spinner
     isLoading = false;
-    displaySpinner(isLoading);
 
     // 判斷獎項1-3狀態
     // 以號碼代表獎品：
