@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jaycub">
+    <meta name="date" content="2020/07/15">
+    <title>CSS homework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', '微軟正黑體';
+            line-height: 1.8;
+            font-size: 18px;
+            box-sizing: border-box;
+            color: rgb(48, 55, 65);
+        }
+
+        .wrap {
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .container {
+            max-width: 970px;
+            margin: 0 auto;
+            padding: 15px;
+            display: block;
+        }
+
+        .header {
+            width: 100%;
+            background: url(imgs/高每晚霞.jpg) center 25% no-repeat;
+            background-size: cover;
+            color: #ecf0f1;
+        }
+
+        .header hr {
+            border-top: 3px solid #ecf0f1;
+        }
+
+        #headbanner {
+            background: rgba(48, 55, 65, 0.95);
+        }
+
+        h1 {
+            font-weight: bolder;
+            max-width: 570px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-weight: bolder;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .part1 img,
+        #part2area img,
+        #part3area img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .part1 {
+            background-image: url(imgs/白色奇萊.jpg);
+            background-size: cover;
+        }
+
+        .leftpanel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .part2 {
+            background-image: url(imgs/合歡山晚霞.jpg);
+            background-size: cover;
+            color: #ecf0f1;
+        }
+
+        #part1area {
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+        }
+
+        #part2area {
+            background: rgba(48, 55, 65, 0.95);
+            display: flex;
+            align-items: center;
+        }
+
+        #part3area {
+            background: rgba(48, 55, 65, 0.95);
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            padding-top: 10px;
+            text-align: justify;
+        }
+
+        figcaption {
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            display: block;
+        }
+
+        .introduction {
+            padding: 20px;
+        }
+
+        li {
+            margin-top: 20px;
+        }
+
+        /* icon部分 */
+        .icon-bookmarks {
+            width: 24px;
+            height: 24px;
+            fill: #feca57;
+        }
+
+        /* slide部分 */
+        #carouselExampleCaptions img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        #carouselExampleCaptions {
+            max-width: 970px;
+            margin: 0 auto;
+            background: rgba(48, 55, 65, 0.95);
+        }
+
+        #carouselExampleCaptions p {
+            text-align: center;
+        }
+
+        .carousel-caption {
+            position: relative;
+            left: 0;
+            right: 0;
+        }
+
+        /* part4的部分 */
+        .part4 {
+            background: url(./imgs/日月潭.jpg) center center;
+            background-size: cover;
+        }
+
+        .whitebg {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .part4 li {
+            margin-top: 3px;
+        }
+
+        .part4 hr {
+            border-top: 1px solid rgb(48, 55, 65);
+        }
+
+        /* part4 hover區(網路應用) 偽元素應用*/
+        .effect01 {
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .effect01::before,
+        .effect01::after {
+            content: '';
+            /* 內容至少給個空白，偽元素才會有空間 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            transform: translate(-101%, 0);
+            transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+        }
+
+        .effect01::after {
+            transition-delay: 0.2s;
+        }
+
+        .effect01:hover::before,
+        .effect01:hover::after {
+            transform: translate(0, 0);
+        }
+
+
+
+        /* footer 的部分 */
+        /* row外面要加container才不會亂推 */
+        footer {
+            background: #feca57;
+            padding-top: 3px;
+            text-align: center;
+        }
+
+
+        /* navbar */
+        nav li {
+            margin: 0;
+        }
+
+        .navbar {
+            max-width: 970px;
+            margin: 0 auto;
+        }
+
+        .navbarbg {
+            background: #feca57;
+            width: 100%;
+        }
+
+        /*flip-box*/
+        /* 最外層div */
+        .flip-box {
+            background-color: transparent;
+            max-width: 500px;
+            max-height: 500px;
+            perspective: 1000px;
+        }
+
+        /* 讓內層圖片相對定位的div(此處下transform-style) */
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /* 外層flip-box被hover時，讓內層div以y軸翻轉 */
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* 讓其中一個圖下relative讓它佔據一個空間，切版才不會跑掉 */
+        .flip-box-front {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* 另一個下absolute，讓他浮起不占空間 */
+        .flip-box-back {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* 讓背面的圖先翻轉消失 */
+        .flip-box-back {
+            transform: rotateY(180deg);
+        }
+
+
+        /* modal與masonry區 */
+        #modalarea {
+            text-align: center;
+            background: rgba(48, 55, 65, 0.95);
+            color: rgb(48, 55, 65);
+            padding-bottom: 50px;
+        }
+
+        #modalarea h3 {
+            margin-top: 10px;
+        }
+
+        .btnstyle {
+            background: #feca57;
+        }
+
+        .btnstyle:hover {
+            color: rgb(48, 55, 65);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .list {
+            column-count: 3;
+        }
+
+        .list .item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .item {
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .modal-dialog {
+            max-width: 970px;
+        }
+
+        @media (max-width: 760px) {
+            .list {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="navbarbg sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">Jaycub</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#homepage">首頁 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#story">自傳</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skill">技能樹</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                作品集
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://github.com/Jaycub-Chang/hexschool.homework"
+                                    target="_blank">Github 六角學院實作</a>
+                                <a class="dropdown-item disabled" href="#">資策會作品</a>
+                                <a class="dropdown-item" href="https://www.facebook.com/profile.php?id=100001205874636"
+                                    target="_blank">我的FB</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                作品Github-Page與codepen
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"
+                                    href="https://jaycub-chang.github.io/hexschool.homework/Html%20CSS%20%E6%9C%80%E7%B5%82%E4%BD%9C%E6%A5%AD/finalwork"
+                                    target="_blank">初試啼聲：第一次完成網頁作業</a>
+                                <a class="dropdown-item"
+                                    href="https://jaycub-chang.github.io/hexschool.homework/Html%E5%A4%9A%E9%A0%81%E5%BC%8F%E4%BD%9C%E6%A5%AD/home"
+                                    target="_blank">六角學院：多頁式網頁最終作業</a>
+                                <a class="dropdown-item" href="https://codepen.io/jl55661688/pen/MWaRKEJ"
+                                    target="_blank">我的第一張網頁名片</a>
+                                <a class="dropdown-item" href="https://codepen.io/jl55661688/pen/abdwNNx"
+                                    target="_blank">簡易網頁記事本(尚未串local storage)</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">持續更新...</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header" id="homepage">
+            <div class="container" id="headbanner">
+                <h1>追求夢想的初心者<br>
+                    <hr>從公務沙漠邁向數位宇宙</h1>
+            </div>
+        </div>
+        <div class="part1">
+            <div class="row container" id="part1area">
+                <div class="col-md-4 col col-12 leftpanel">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <figure class="flip-box-front">
+                                <img src="imgs/大頭照.jpg" alt="我的大頭照" title="暱稱：小杰">
+                                <figcaption>初心者：小杰</figcaption>
+                            </figure>
+                            <figure class="flip-box-back">
+                                <img src="imgs/翻轉圖/大頭2.jpg" alt="我的大頭照2" title="兼職：不專業攝影師">
+                                <figcaption>喜歡帶著單眼到處趴趴走</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <figure class="flip-box-front">
+                                <img src="imgs/大頭3.jpg" alt="我的假文青照1" title="喜歡拍照，當個假文青(誤)">
+                                <figcaption>喜歡攝影看美景</figcaption>
+                            </figure>
+                            <figure class="flip-box-back">
+                                <img src="imgs/翻轉圖/鄉下人來到城市感受驚艷.jpg" alt="我的假文青照2" title="孤身在城市中勇闖">
+                                <figcaption>鄉下人來到城市叢林</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <figure class="flip-box-front">
+                                <img src="imgs/大頭照2.jpg" alt="我的大頭照3" title="是個電影狂，並自己做出屬於自己的光劍">
+                                <figcaption>電影咖，去工作室動手做出屬於自己的光劍</figcaption>
+                            </figure>
+                            <figure class="flip-box-back">
+                                <img src="imgs/翻轉圖/銀河與光劍.jpg" alt="我們這一家2" title="當時在梅峰農場當替代役">
+                                <figcaption>光劍就是要配銀河阿(吶喊)<br>May the force be with you！</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-12">
+                    <div class="introduction">
+                        <h2 class="lefttitle">職涯與專長</h2>
+                        <p>我叫張正杰(Jaycub)，今年26歲，畢業於國立中興大學生物科技學士學位學程，之前於衛生福利部疾病管制署，以及新北市政府衛生局擔任公職。</p>
+                        <ul>
+                            <li><svg class="icon-bookmarks">
+                                    <use xlink:href="./icons/symbol-defs.svg#icon-bookmarks"></use>
+                                </svg>公務生涯</li>
+                            <p>在CDC新興傳染病整備組擔任普考研究助理，主要業務為針對伊波拉、炭疽病等傳染病蒐集國外論文與新知，更新工作手冊。於新北市政府衛生局疾病管制科擔任高考衛生稽查員，負責災害防救與教育、武漢肺炎相關業務窗口。
+                            </p>
+                            <li><svg class="icon-bookmarks">
+                                    <use xlink:href="./icons/symbol-defs.svg#icon-bookmarks"></use>
+                                </svg>多益測驗815 (熟習基本英文)</li>
+                            <p>我常搜尋stackoverflow之討論，能夠閱讀MDN、套件文件，並可簡單敘述其內容及摘要。平時也喜歡觀看Youtube的評論影片、Ted及脫口秀。
+                            </p>
+                            <li><svg class="icon-bookmarks">
+                                    <use xlink:href="./icons/symbol-defs.svg#icon-bookmarks"></use>
+                                </svg>跨界專長：生物科技</li>
+                            <p>在大學本科系時主要研讀生物化學、分子生物學、免疫學、腫瘤細胞學以及細胞生物學。於校內的分子生物研究所修習專題討論過，題目是「建立鮑氏不動桿菌抗原之純化平台」，因此了解蛋白質純化、DNA電泳萃取、PCR、基因轉殖及西方墨點法等基本生化原理。
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part2" id="story">
+            <div class="row container" id="part2area">
+                <div class="col-md-8 col-12 rwdmb">
+                    <h2 class="lefttitle">冒險歷程：撰寫屬於自己的故事</h2>
+                    <ul>
+                        <li><svg class="icon-bookmarks">
+                                <use xlink:href="./icons/symbol-defs.svg#icon-bookmarks"></use>
+                            </svg>我的家庭與啟程</li>
+                        <p>我出生於南投縣考屯鎮的一個小康家庭，爸媽都是老師，因此他們在我年幼時讓我對於事物種下了一棵好奇的種子。長大後，出了社會，出身公教家庭的我，爸媽也期盼著我能考上高考得到一份穩定的工作，而在我勤奮努力下，揮灑的汗水也終於有所了收穫，殊不知未來卻打開了對於程式撰寫的一扇窗。
+                        </p>
+                        <p>在公務界，單調繁瑣的公文如雪花般飛來，民眾的陳情與電話一分種幾十萬上下，讓我對於工作的熱情逐漸消磨，迷失徬徨在這創造力乾涸的沙漠中。機構僵硬的體制、長官的謾罵與民眾的刁難，讓我下定決定投入這程式撰寫的藍海，可望在這創作的洪流中能夠以自己的想像力開拓屬於自己的人生。
+                        </p>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-12 ">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <figure class="flip-box-front">
+                                <img src="imgs/我們這一家.jpg" alt="我們這一家" title="全家福">
+                                <figcaption>我們這一家</figcaption>
+                            </figure>
+                            <figure class="flip-box-back">
+                                <img src="imgs/翻轉圖/全家福2.jpg" alt="我們這一家2" title="全家福2">
+                                <figcaption>苗栗秘境：台灣嵐山</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row container" id="part3area">
+                <div class="col-md-4 col col-12 rwdmt">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <figure class="flip-box-front">
+                                <img src="imgs/爬山.jpg" alt="登山照" title="玉山">
+                                <figcaption>國考後登山：學習對大自然謙卑與敬畏</figcaption>
+                            </figure>
+                            <figure class="flip-box-back">
+                                <img src="imgs/翻轉圖/登山2.jpg" alt="登山照2" title="合歡北峰">
+                                <figcaption>大學團：合歡北峰</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-12 rwdmt2">
+                    <ul>
+                        <li><svg class="icon-bookmarks">
+                                <use xlink:href="./icons/symbol-defs.svg#icon-bookmarks"></use>
+                            </svg>創造力的泉源：興趣</li>
+                        <p>俗話說：「生活中並不缺少美，缺少的是發現。」培養興趣就如同一陣甘霖，澆灌在我內心創造力的種子上，讓他滋潤與茁壯。而且爸爸也是電影咖，讓我自幼在電影特效的薰陶下，對畫面有些許的敏感度。主要喜歡奇幻、科幻、深度劇情電影：全面啟動、黑暗騎士、雲端情人、魔戒、意外、銀翼殺手...等等。
+                        </p>
+                        <p>其他興趣還有：重訓、游泳、登山與踏青、打電動、完桌遊、聽音樂、看動畫、看西方硬奇幻小說(EX：颶光典籍、迷霧之子)等。</p>
+                        <p>下方是我的冒險攝影幻燈片，也希望未來能持續精進技術，順便將畫面作為網頁創作元素。</p>
+                    </ul>
+                </div>
+            </div>
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./imgs/合歡北極星星軌.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>合歡山北極星與星軌</h5>
+                            <p>之前替代役於台灣大學山地實驗農場服役時拍攝</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imgs/夢谷瀑布.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>夢谷瀑布</h5>
+                            <p>埔里秘境，服役期間下山好去處</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imgs/追交照.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>追焦照</h5>
+                            <p>八卦山上的重機，好帥啊！</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imgs/埔里螢火蟲.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>埔里的螢火蟲</h5>
+                            <p>旺季為4月份，山區乾淨的水源附近都有蹤跡的可能</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imgs/藍色車軌.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>藍色公路與車軌</h5>
+                            <p>一股熱血就騎著車帶著照相機從南投騎到台中了</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imgs/南投休息站.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>雙色河流</h5>
+                            <p>高速公路的車軌宛如雙色河流般經過南投休息站</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imgs/合歡山夕陽.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>合歡山夕陽</h5>
+                            <p>退伍前的回憶，從梅峰到合歡主峰享受夕陽的溫暖</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="container" id="modalarea">
+                <button type="button" class="btn btnstyle" data-toggle="modal" data-target="#exampleModal">
+                    冒險成長紀錄細節
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title" id="exampleModalLabel">我的成長歷程</h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="list">
+                                    <div class="item">
+                                        <img src="./imgs/modal/紫禁城.jpg" alt="高中全班到紫禁城參訪">
+                                        <h3>在明道發現你自己！</h3>
+                                        <p>國中時有幸進入台中的明道中學音樂班就讀，並在努力念書下高中直升數理實驗班，因而認識了許多強者、變態與怪咖。然後很幸運，學校對我們班也安排了去中國大陸北京四中的交換行程，在那邊我們不僅體會了當地的人文風俗，也參觀了許多著名古蹟如：萬里長城、紫禁城等。
+                                        </p>
+                                    </div>
+                                    <div class="item">
+                                        <img src="./imgs/modal/交換學生體驗.jpg" alt="與四中學伴的合照">
+                                        <h3>乖乖牌？狼性？</h3>
+                                        <p>在四中時，我的學伴是個熱心的同學，還記得當時交換了許多兩岸之間的文化差異，例如：我們的注音符號、他們的社團活動，頓時發現台灣的學生似乎都是比較客氣、怕出風頭，盡量避開「就你最特別」的標籤，而他們則是會非常主動的發表自己的意見，並且激動的據理力爭，彼此都有值得互相學習，以及引以為鑑的地方。
+                                        </p>
+                                    </div>
+                                    <div class="item">
+                                        <img src="./imgs/modal/大學活動.jpg" alt="系上合照">
+                                        <h3>組織與活動：系學會會長的試煉</h3>
+                                        <p>上了大學，大一時跟大家一樣參與了迎新、宿營、送舊等活動，二年級後在宿營擔任小隊輔，細心呵護(誘拐)學弟妹們。然後三年級就意外被學長姐推派當選系學會會長。當時的我找了一群值得信任的強者同學們，負責安排整個系一整年的活動，包括：第一屆的三系聯合聖誕晚會、第一屆的尋寶大賽等等，讓我在那一年在必須兼顧專題研究下，學到了許多組織管理、工作分配與企劃安排的實務技能。
+                                        </p>
+                                    </div>
+                                    <div class="item">
+                                        <img src="./imgs/modal/梅峰農場.jpg" alt="梅峰農場廣場照">
+                                        <h3>農業役：臺大山地實驗農場</h3>
+                                        <p>畢業後當替代役，當時在臺大山地實驗農場(梅峰)主要負責公文收發管理，並且兼職農夫種馬鈴薯、摘水蜜桃、包裝蘋果等工作，另外農場活動期間也負責幫忙賣票、飯店房務協助等。放風時的樂趣，除了爬山看大自然、銀河星空外，偶爾會跟原住民喝酒聊天聽故事，培養文化敏感度。
+                                        </p>
+                                    </div>
+                                    <div class="item">
+                                        <img src="./imgs/modal/畢業.jpg" alt="畢業照">
+                                        <h3>新鮮人 X 業務 X 國考</h3>
+                                        <p>退伍後，一開始我去當醫療骨材業務，主要負責在中彰投苗地區，跟醫生推銷如人工膝關節、骨釘、骨板與人工椎間盤等器具，並且需學習與醫生一起上台開刀。後來在薪水與工作距離的考量下，決定投入國考。
+                                        </p>
+                                    </div>
+                                    <div class="item">
+                                        <img src="./imgs/modal/CDC.jpg" alt="CDC同仁合照">
+                                        <h3>CDC：防疫視同作戰</h3>
+                                        <p>很幸運，在第一年我以普考第7名進入到疾病管制署整備組，當時參與了許多國內研討會，並開始接觸到公文。隔年，再考上高考到新北市衛生局，並擔任衛生稽查員。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part4" id="skill">
+            <div class="whitebg container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>我期許的專業技能樹</h2>
+                        </div>
+                        <div class="col-6 col-md-3 effect01 pt-4">
+                            <h3>視覺設計</h3>
+                            <hr>
+                            <ul>
+                                <li>Lightroom</li>
+                                <li>Photoshop</li>
+                                <li>Illustrator</li>
+                                <li>Adobe XD</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3 effect01 pt-4">
+                            <h3>前端開發</h3>
+                            <hr>
+                            <ul>
+                                <li>Html5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                                <li>Bootstrap</li>
+                                <li>jQuery</li>
+                                <li>Vue.js</li>
+                                <li>React</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3 effect01 pt-4">
+                            <h3>後端開發</h3>
+                            <hr>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>PHP</li>
+                                <li>MySQL</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3 effect01 pt-4">
+                            <h3>輔助技能</h3>
+                            <hr>
+                            <ul>
+                                <li>Git、Github</li>
+                                <li>單眼攝影</li>
+                                <li>英文多益815</li>
+                                <li>公文撰寫</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-12">
+                        <h6>Author：Jaycub</h6>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <h6>E-MAIL：jl55661688@yahoo.com.tw</h6>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <h6>Copyright&copy;2020</h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

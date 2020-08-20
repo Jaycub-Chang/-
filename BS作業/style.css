@@ -1,0 +1,601 @@
+/* CSS reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 以下開始作業區 */
+body{
+    line-height: 1.42857143;
+    font-size: 14px;
+    font-family: Arial,"Microsoft Sans Serif","Lucida Sans Unicode";
+    color: #333;
+    box-sizing: border-box;
+}
+.wrap{
+    margin: 0 auto;
+}
+
+/* .headerlink區 */
+.headerlink{
+    background-color: #4b4b4b;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+    overflow: auto;
+    white-space:nowrap;
+}
+.headerlink span{
+    color: #eded89;
+}
+.linkleftpart{
+    display: flex ;
+    justify-content: space-around;
+    align-content: center;
+    margin: 0;
+}
+.headerlink img{
+    width: 10px;
+    margin: 0 0 4px 5px;
+}
+.headerlink a{
+    text-decoration: none;
+    color: #fff;
+}
+.headerlink a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.headerlink li{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.headerlink .dividline{
+    border-right: #fff 2px solid;
+}
+.applink{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* header區 */
+.header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+.header img{
+    width: 160px;
+}
+
+
+/* navbar區 */
+#findpic{
+    width: 26px;
+}
+nav input{
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none !important;
+    background: transparent !important;
+}
+.signinarea{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+    color: #3c5293;
+}
+.signinarea:hover{
+    text-decoration: none;
+}
+nav{
+    border: 1px solid #e1e1e1;
+    padding: 0 !important;
+    background:linear-gradient(white , #f4f4f4);
+    font-weight: bold;
+    font-size: 14px;
+}
+.nav-item a{
+    color: #333 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.nav-item{
+    border-right: 1px solid #e1e1e1;
+}
+#navbarSupportedContent{
+    align-items: stretch;
+}
+#navbarSupportedContent li{
+    display: flex;
+    align-items: center;
+}
+#navbarSupportedContent a:hover{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAwCAMAAADuBkDJAAAACVBMVEX9/f34+Pjy8vKEM56eAAAAOklEQVQY062IQQ4AIAjDGP9/tBTUaDiZOEjXzJzYZyouXOUuA7jwAEv0crLZl5P5wMpoflrWlb68ZADKjwD8uDMPpwAAAABJRU5ErkJggg==);
+}
+
+
+
+/* content區 */
+.content{
+    background: #f4f4f4;
+}
+.banner{
+    margin-top: 15px;
+    background-color: black;
+    color: #999999;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.articleauthor {
+    display: flex;
+}
+.articleauthor img{
+    width: 36px !important;
+    height: 36px !important;
+    margin-right: 10px;
+}
+.banner h2{
+    padding: 60px 10px 10px;
+    color: white;
+}
+.articleimg{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.bannerpic{
+    position: absolute;
+    overflow: hidden;
+}
+.bannerpic img{
+    position: relative;
+    width: 80%;
+    left: 55px;
+    transition: 1s;
+}
+.bannerpic:hover img{
+    transform: rotate(10deg) scale(1.5);
+}
+
+.articleimg::before{
+    content: " ";
+    display: block;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    z-index: 5;
+    background-image: linear-gradient(90deg,#000 50%, transparent);
+}
+.articleimg::after{
+    content: " ";
+    display: block;
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    background-image: linear-gradient(-90deg,#000 50%, transparent);
+}
+.summury{
+    width: 40%;
+    z-index: 10;
+    padding-bottom: 20px;
+}
+.summury a{
+    color: white;
+    text-decoration: none !important;
+}
+.summury a:hover{
+    color: white;
+    text-decoration: none !important;
+}
+.articlesidebar{
+    position: relative;
+    width: 20%;
+    z-index: 10;
+}
+.articlesidebar ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.articlesidebar a{
+    color: #999999;
+    text-decoration: none !important;
+}
+.articlesidebar a:hover{
+    color: #cccccc;
+    text-decoration: none !important;
+}
+.articlesidebar li{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #999999;
+}
+
+
+
+/* content內文區 */
+/* part1區 */
+.ranklist img{
+    width: 100%;
+    transition: 1s;
+}
+.listimg{
+    overflow: hidden;
+}
+.listimg:hover img{
+    transform: rotate(10deg) scale(1.5);
+}
+.ranklist, .centerarea h3, .rightarea h3, .part2 h3{
+    background: #3b498b;
+    color: white;
+}
+.ranklist h3, .centerarea h3, .rightarea h3, .part2 h3{
+    padding: 15px 0px;
+    text-align: center;
+    font-size: 22px;
+}
+.ranklist a{
+    color: white;
+    padding: 20px;
+    display: block;
+    font-size: 18px;
+}
+
+.ranklist a:hover{
+    color: white;
+}
+
+.ranklist span{
+    display: block;
+    font-size: 30px;
+    padding: 25px;
+}
+
+.ranklist li{
+    display: flex;
+    border-bottom: 1px solid #cccccc;
+    justify-content: space-between ;
+    align-items: center;
+}
+.post{
+    padding: 15px;
+    background: white;
+}
+.centerarea h3, .part2 h3{
+    margin: 0;
+}
+.post img{
+    object-fit: cover;
+    width: 100%;
+    transition: 1s;
+}
+.postpic:hover img{
+    transform: rotate(10deg) scale(1.5);
+}
+.postpic{
+    overflow: hidden;
+}
+.post a{
+    font-size: 20px;
+    display: block;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+.post a:hover{
+    text-decoration: none;
+}
+.post p{
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.socialnetwork {
+    display: flex;
+    justify-content: space-between;
+}
+.socialnetwork img{
+    width: 54px;
+    height: 54px;
+}
+.adblock{
+    height: 300px;
+    background: transparent;
+}
+.bookimg{
+    width: 100%;
+    overflow: hidden;
+}
+.bookimg img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* 以下part2 */
+.part2{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.artiinfo a:hover{
+    text-decoration: none;
+}
+.article{
+    display: flex;
+}
+#article01, #article02{
+    padding-bottom: 15px;
+}
+.articlelist{
+    padding: 15px;
+    background: white;
+}
+.article img{
+    width: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+.articlepic{
+    width: 40%;
+    height: 100px;
+    overflow: hidden;
+}
+.articlepic:hover img{
+    transform: rotate(10deg) scale(1.5);
+}
+
+
+
+.artiinfo{
+    width: 60%;
+    padding-left: 15px;
+}
+.artiinfo a{
+    font-size: 20px;
+}
+.date{
+    color: #aaaaaa;
+}
+.daynews{
+    text-align: center;
+    position: relative;
+}
+.daynewspic{
+    overflow: hidden;
+}
+.daynewspic img{
+    width: 100%;
+    object-fit: cover;
+}
+.calendar{
+    width: 60px;
+    height: 60px;
+    background: #f4f4f4;
+    position: absolute;
+    left: 40%;
+    bottom: 23%;
+    border-radius: 5px;
+}
+.calendar span{
+    display: block;
+}
+.datenumber{
+    font-size: 32px;
+    color: #d15c3f;
+    line-height: 1;
+}
+.daynewsinfo,.daynewsinfo h3{
+    background: #d15c3f ;
+    font-size: 18px;
+    padding-top: 20px;
+}
+.daynewsinfo a{
+    color: white;
+    display: block;
+    text-align: end;
+    padding: 5px 10px;
+}
+.daynewsinfo a:hover{
+    text-decoration: none;
+    color:#cccccc;
+}
+
+
+
+/* part3 */
+.cardinfo a{
+    display: block;
+    background: #3b498b;
+    color: white;
+}
+.cardauthor::after{
+    content: "\270f";
+    margin-left: 5px;
+}
+.cardinfo a:hover{
+    color: white;
+}
+.cardimg{
+    overflow: hidden;
+    height: 120px;
+}
+.cardimg img{
+    width: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+.cardinfo{
+    padding: 15px;
+    background: #3b498b;
+}
+.cardtitle{
+    padding-top: 5px;
+    font-size: 20px;
+}
+.card{
+    margin-bottom: 20px;
+}
+#adcard{
+    visibility: hidden;
+}
+.part3arrow{
+    display:flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.cardimg:hover img{
+    transform: rotate(10deg) scale(1.5);
+}
+
+
+/* footer slide 區 */
+.footslide{
+    background: #333;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.footslide h2{
+    padding: 15px 0;
+}
+.footerlink{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footerlink span{
+    display: block;
+    margin-top: 20px;
+}
+.footerlink a{
+    color: white;
+}
+.footerlink a:hover{
+    color: white;
+    text-decoration: none;
+}
+.footerlink li{
+    padding: 10px;
+}
+
+
+/* footer區 */
+footer{
+    background: #333;
+    text-align: center;
+    padding-bottom: 30px;
+}
+footer a{
+    color: white;
+    font-size: 12px;
+}
+footer a:hover{
+    text-decoration: none;
+    color: #cccccc;
+}
+footer img{
+    margin-right: 10px;
+}
+footer p{
+    color: #f4f4f4;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+
+
+/* RWD區 */
+@media(max-width: 1200px){
+    .calendar{
+        bottom: 28%;
+    }
+}
+
+@media (max-width:992px){
+    .banner{
+        display: none;
+    }
+    .part1{
+        margin-top: 15px;
+    }
+    .calendar{
+        bottom: 35%;
+    }
+}
+
+
+@media (max-width:	960px){
+    .adblock{
+        display: none;
+    }
+    .socialnetwork{
+        padding-top: 15px;
+    }
+}
+
+
+@media (max-width: 768px){
+    #adcard{
+        display: none;
+    }
+    .calendar{
+        bottom: 20%;
+    }
+    .daynewsinfo{
+        margin-bottom: 15px;
+    }
+}
+

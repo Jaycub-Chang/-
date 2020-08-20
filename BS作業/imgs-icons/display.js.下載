@@ -1,0 +1,511 @@
+;(function($) 
+{
+	var debug_mode = false;
+
+	var API_URL_PROFILE	= ajax_obj.sso_api_profile;
+	var API_URL_LOGOUT	= ajax_obj.sso_api_logout;
+	var API_URL_UNREAD	= ajax_obj.sso_api_unread;
+	var API_URL_ALLREAD = ajax_obj.sso_api_allread;
+
+	var LNK_URL_INBOX	= ajax_obj.sso_url_inbox;
+	var LNK_URL_FAV		= ajax_obj.sso_url_fav;
+	var LNK_URL_PROFILE	= ajax_obj.sso_url_profile;
+	var LNK_URL_PWD		= ajax_obj.sso_url_passwd;
+
+	var AVATAR_SIZE 	= ajax_obj.avatar_size;
+
+	var CODE_SUCCESS	= 0; // 遠端回傳的success code值
+
+	var init_check = function(){
+		if (API_URL_PROFILE && API_URL_LOGOUT && API_URL_UNREAD){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	var debug_log = function(msg){ if (debug_mode){console.log(msg);}}
+
+	if (!init_check()) {
+		debug_log('SSO API設定錯誤');
+		done();
+	}else{
+
+		//看url有沒有傳 token
+		var hash_set = window.location.hash.substr(1);
+		var ary_hash = hash_set.split('=');
+		
+		//網址有token就set cookie，重讀頁面
+		if (ary_hash[0]=='access_token') 
+		{
+			var ary_hash1 = hash_set.split('access_token=');
+
+			var ary_token = ary_hash1[1].split('&');
+			var token = ary_token[0];
+			$.cookie('_psk_token', token, { expires: 7, path: '/' }); //設定cookie
+
+			debug_log('get access_token: '+hash_set);
+
+			//refresh page
+			var ref_url = window.location.href.substr(0, window.location.href.indexOf('#'));
+			window.location = ref_url;			
+		}
+		else if ($.cookie('_psk_token') && $.cookie('_psk_token')!=='undefined')
+		{
+			// 網址沒token，看cookie有沒有token，有的話就 show_logged_in panel
+			show_logged_in_panel($.cookie('_psk_token')); //但還沒確定cookie過期沒
+		}
+		else{
+			//網址沒token，cookie也沒token
+			debug_log('no psk access_token.');
+			done();
+		}
+
+		// //有cookie就show logged in panel
+		// if ($.cookie('_psk_token') && $.cookie('_psk_token')!=='undefined'){
+		// 	show_logged_in_panel($.cookie('_psk_token')); //但還沒確定cookie過期沒
+		// }else{
+		// 	//看url有沒有傳token
+		// 	var hash_set = window.location.hash.substr(1);
+		// 	var ary_hash = hash_set.split('=');
+		// 	//有傳token就set cookie
+		// 	if (ary_hash[0]=='access_token') {
+		// 		var ary_token = ary_hash[1].split('&');
+		// 		var token = ary_token[0];
+		// 		$.cookie('_psk_token', token, { expires: 7, path: '/' }); //設定cookie
+		// 	}
+		// 	// 有無token cookie
+		// 	if ($.cookie('_psk_token') && $.cookie('_psk_token')!=='undefined'){
+		// 		debug_log('get access_token.');
+		// 		//refresh page
+		// 		var ref_url = window.location.href.substr(0, window.location.href.indexOf('#'));
+		// 		window.location = ref_url;
+		// 	}else{
+		// 		//沒cookie，也沒帶來token
+		// 		debug_log('no psk access_token.');
+		// 		done();
+		// 	}
+		// }
+	}
+
+	function done() {
+		debug_log('done');
+		$('.sso_loading').hide();
+		$('.sso_panel').fadeIn('1000');
+		//show_login_notification();
+	}
+
+	function show_logged_in_panel(access_token) 
+	{
+		var token = decodeURIComponent(access_token);
+		send_req_get_cur_user(API_URL_PROFILE, token);
+	}
+
+	function send_req_get_cur_user(urlCall, token) {
+		debug_log('send_req_get_cur_user: '+token);
+	    $.ajax({
+	        url: urlCall,
+	        type: 'GET',
+	        headers: {"authorization": "Bearer " + token},
+	        success: function(data){
+	        	debug_log(data);
+	        	// 成功
+	        	if (data.status.code === CODE_SUCCESS){
+	        		logged_in_panel(data.user, token);
+	        		done();
+	        	}else{
+	        		debug_log(token);
+	        		do_logout(token);
+	        	}
+	        },
+	        error: function(jqXHR, textStatus, errorThrown) {
+				debug_log(textStatus+':'+errorThrown);
+				//alert('取得會員資料失敗，請稍候再試。'); //token可能過期了
+				do_logout(token);
+	        }
+	    });
+	}
+
+	function logged_in_panel(userinfo, token) {
+		debug_log('logged_in_panel');
+		var unread_container = 'li.mem_lnk .unread';
+		var unread_menu_container = 'li.mem_lnk .unread_menu';
+		var local_panel_container = 'li.local_panel';
+		var user_name_container = 'li.mem_lnk .user_name';
+
+		var fav_sec;
+		if (LNK_URL_FAV){
+			fav_sec = '<li class="mem_lnk"><a href="'+LNK_URL_FAV+'">收藏</a></li>';
+		}else{
+			fav_sec = '';
+		}
+
+		//成功取得cur user
+		try{
+		if (userinfo.email !=='' && userinfo.email !=null && userinfo.email !=='undefined')
+		{
+			$('.sso_panel').each(function() 
+			{
+				//panel
+				// var panel = '<li class="mem_avatar" class=""></li>'+
+				// 			'<li class="mem_lnk"><a href="'+LNK_URL_PROFILE+'"><span class="user_name"></span></a></li>'+
+				// 			'<li class="mem_lnk user_msg">'+
+				// 				'<a class="toggle_msg_list" href="javascript:void(0);">'+
+				// 					'訊息<span class="unread" style="display:none;"></span>'+
+				// 				'</a>'+
+				// 				'<ul class="unread_menu" style="display:none;"></ul>'+
+				// 			'</li>'+
+				// 			fav_sec+
+				// 			'<li class="mem_lnk local_panel" style="display:none;"></li>'+
+				// 			'<li class="mem_lnk logout last"><a class="btn_logout" href="javascript:void(0);">登出</a></li>';
+
+				var panel = '<li><a class="mem_avatar" href="javascript:void(0);"></a><ul class="ver_menu" style="display:none;">'+
+							'<li class="mem_lnk"><a href="'+LNK_URL_PROFILE+'"><span class="user_name"></span></a></li>'+
+							'<li class="mem_lnk user_msg">'+
+								'<a class="toggle_msg_list" href="javascript:void(0);">'+
+									'訊息<span class="unread" style="display:none;"></span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>'+
+								'</a>'+
+								'<ul class="unread_menu" style="display:none;"></ul>'+
+							'</li>'+
+							fav_sec+
+							'<li class="mem_lnk local_panel" style="display:none;"></li>'+
+							'<li class="mem_lnk logout last"><a class="btn_logout" href="javascript:void(0);">登出</a></li></ul></li>';
+
+
+				$(this).html(panel);
+
+				//local login
+				do_local_login(local_panel_container, userinfo, token);
+				//取得暱稱
+				load_user_name(user_name_container, userinfo.nickname, token);
+				//取得頭像
+				load_avatar('.mem_avatar', userinfo);
+				//取得未讀訊息
+				send_req_get_unread(API_URL_UNREAD, token, unread_container, unread_menu_container);
+			});
+
+			// Logout Btn
+			$('.btn_logout').on('click', function(e) {
+				debug_log('btn_logout');
+				if (confirm('是否一併登出泛科知識？')) {
+					//send_req_logout(API_URL_LOGOUT, token);
+					remote_logout(token);
+				}else{
+					do_logout(token);
+				}
+			});
+
+			//Hide the menus if visible
+			$('html').click(function() {
+				$(unread_menu_container).hide();
+			});
+
+			$(unread_menu_container).on('click', function(event) {
+				event.stopPropagation();
+			});
+
+			$('.mem_avatar').on('click', function(){
+				if ($(this).next('ul.ver_menu').length){
+					$(this).next('ul.ver_menu').toggle();
+				}
+
+			});
+
+			// Toggle msg list
+			$('.toggle_msg_list').on('click', function(event) {
+				event.stopPropagation();
+				debug_log('toggle_msg_list');
+				$('li.mem_lnk .unread_menu').toggle();
+				$('.unread').fadeOut('fast');
+				//發出 read API (表示全部設為已讀)
+				send_req_allread(API_URL_ALLREAD, token);
+			});
+
+			return true;
+		}else{
+			return false;
+		}
+		}catch(e){
+		   debug_log("err:", e);
+		}
+	}
+
+	function load_user_name(container, nickname, token){
+		debug_log('load_user_name: '+nickname);
+		var user_name;
+		if (nickname != null && nickname != '' && nickname != undefined) {
+			$(container).html(nickname).show();
+		}else{
+			$.ajax({
+				async: true, //mimic POST use false
+				type: 'POST',
+				url: ajax_obj.ajaxurl,
+				data: {
+					action: 'load_funny_name_func',
+					psk_token: token
+				},
+				dataType: 'json',
+				success: function(res) {
+					// 成功 (mu_sso=0)
+					if (res.code==='0') {
+						if (res.text!=''){
+							$(container).html(res.text).show();
+						}
+					}
+				},
+				error:function (xhr, ajaxOptions, thrownError){
+					debug_log('[do_login] '+ajaxOptions+':'+thrownError);
+				}
+			});
+		}
+	}
+
+	function do_local_login(container, userinfo, token){
+		debug_log('do_local_login');
+		$.ajax({
+			async: true, //mimic POST use false
+			type: 'POST',
+			url: ajax_obj.ajaxurl,
+			data: {
+				action: 'do_login_func',
+				u_nickname: userinfo.nickname,
+				u_email: userinfo.email,
+				psk_token: token
+			},
+			dataType: 'json',
+			success: function(res) {
+				// 成功 (mu_sso=0)
+				if (res.code==='0') {
+					if (res.text!=''){
+						$(container).html(res.text).show();
+					}
+				}
+			},
+			error:function (xhr, ajaxOptions, thrownError){
+				debug_log('[do_login] '+ajaxOptions+':'+thrownError);
+			}
+		});
+	}
+
+	function load_avatar(container, userinfo) {
+		debug_log('load_avatar');
+		if (userinfo.photo){
+			$(container).html('<img src="'+userinfo.photo+'" style="width:auto; height:28px;">');
+		}else{
+			$.ajax({
+				async: true, //mimic POST use false
+				type: 'POST',
+				url: ajax_obj.ajaxurl,
+				data: {
+					action: 'load_avatar_func',
+					u_email: userinfo.email,
+					img_size: AVATAR_SIZE
+				},
+				dataType: 'json',
+				success: function(res) {
+					// 成功 (musso=0)
+					if (res.code==='0') {
+						$(container).html(res.text);
+					}
+				},
+				error:function (xhr, ajaxOptions, thrownError){
+					debug_log('[load_avatar] '+ajaxOptions+':'+thrownError);
+				}
+			});
+		}
+
+	}
+
+	// 將全部訊息設為已讀
+	function send_req_allread(urlCall, token){
+		debug_log('send_req_allread');
+	    $.ajax({
+	        url: urlCall,
+	        type: 'GET',
+	        headers: {"authorization": "Bearer " + token},
+	        success: function(data){
+	        	debug_log(data);
+        		// 成功
+	        	if (data.status.code === CODE_SUCCESS){
+	        		debug_log('success');
+	        	}else{
+	        		debug_log(data.status);
+	        	}
+	        },
+	        error: function(jqXHR, textStatus, errorThrown) {
+				debug_log('[send_req_allread] '+textStatus, errorThrown);
+				//$(num_container).html('999').show();
+				//alert('設定訊息已讀失敗，請稍候再試。');
+				//do_logout(token);
+	        }
+	    });
+	}
+
+	function send_req_get_unread(urlCall, token, num_container, menu_container){
+		if ($(menu_container).length==1){
+		    $.ajax({
+		        url: urlCall,
+		        type: 'GET',
+		        headers: {"authorization": "Bearer " + token},
+		        success: function(data){
+		        	debug_log(data);
+		        	//success
+		        	var unread_num = data.messages.length; 
+		        	if (unread_num > 0) {
+		        		for (var i=0; i<unread_num; i++){
+		        			var msg_cont = data.messages[i].content;
+		        			var upd_date = new Date(data.messages[i].updatedAt);
+		        			var dy = upd_date.getFullYear();
+		        			var dm = upd_date.getMonth()+1;
+		        			var dd = upd_date.getDate();
+		        			var dh = upd_date.getHours();
+		        			var di = upd_date.getMinutes();
+		        			var msg_date = '<span class="msg_date">'+dy+'-'+dm+'-'+dd+' '+dh+':'+di+'</span>';
+		        			$(menu_container).append('<li class="msg_item"><a href="'+LNK_URL_INBOX+'">'+msg_cont+msg_date+'</a></li>');
+		        		}
+			        }else{
+			        	$(menu_container).append('<li class="no_msg">目前沒有未讀訊息。</li>');
+			        }
+	        		$(menu_container).append('<li class="all_msg"><a href="'+LNK_URL_INBOX+'">查看全部</a></li>');
+
+	        		// 成功
+		        	if (data.status.code === CODE_SUCCESS){
+		        		if (unread_num == 0){
+		        			$(num_container).html('');
+		        		}else{
+		        			$(num_container).html(unread_num).show();
+		        		}
+		        	}else{
+		        		$(num_container).html('');
+		        	}
+		        },
+		        error: function(jqXHR, textStatus, errorThrown) {
+					debug_log('[send_req_get_unread] '+textStatus, errorThrown);
+					//$(num_container).html('999').show(); // [TODO]
+					//alert('取得未讀訊息失敗，請稍候再試。');
+					//do_logout(token);
+		        }
+		    });
+		}else{
+			debug_log('send_req_get_unread: pass.');
+		}
+	}
+	
+	function remote_logout(token){
+		var url = API_URL_LOGOUT;
+		//var logoutPopup = window.open(url , '_blank', "height=10,width=10");
+        $('<iframe></iframe>', {
+            name: 'logout_frame',
+            id: 'logout_frame',
+            src: url
+        }).appendTo('body').load(function(){
+	        console.log('load the iframe');
+	        do_logout(token);
+	    });
+	}
+
+
+	// // Remote Logout
+	// function send_req_logout (urlCall, token) { 
+	// 	debug_log('send_req_logout');
+	//     $.ajax({
+	//         url: urlCall,
+	//         type: 'GET',
+	//         headers: {"authorization": "Bearer " + token},
+	//         success: function(data){
+	//         	debug_log(data);
+	//         },
+	//         error: function(jqXHR, textStatus, errorThrown) {
+	// 			debug_log(textStatus, errorThrown);
+	//         }
+	//     });
+	// }
+
+	// Local Logout
+	function do_logout(token){
+		debug_log('do_logout');
+		//send_req_logout(API_URL_LOGOUT, token);
+		if ($.removeCookie('_psk_token', { path: '/' })){
+			//debug_log('logout!');
+			var ref_url = window.location.href.substr(0, window.location.href.indexOf('#'));
+			window.location = ref_url;
+		}
+	}
+
+	function show_login_notification()
+	{
+		//若token存在 (登入狀態)
+		if ($.cookie('_psk_token') && $.cookie('_psk_token')!=='undefined'){
+			// get token cookie
+			$.cookie('_psk_reg_no_noti', '1', { expires: 7, path: '/' }); //設定7天不提示spotlight登入
+		}
+		else
+		{
+			//若不要吵人cookie存在
+			if ($.cookie('_psk_reg_no_noti') && $.cookie('_psk_reg_no_noti')!=='undefined'){
+				//就不吵人
+			}else{
+				//不吵人cookie不存在，要吵一下
+				// Spotlight
+				$('.sso_panel').addClass('sso_panel_spotlight');
+				$('#reg_notification').css('display', 'inline-block');
+
+				// show full-screen dark background
+
+				var doc_w = $('#categories_container').width(); // ipad: pansci只有這個ele可以滿版 //pc, tablet版
+				if (doc_w <= 0) {
+					var doc_w = $('#m_header').width(); // mobile
+				}
+
+				var doc_h = $('html').innerHeight();
+
+				$('#spotlight_bg').width(doc_w);
+				$('#spotlight_bg').height(doc_h);
+				$('#spotlight_bg').css('display', 'block');
+				$('#hide_spotlight_bg').width(doc_w);
+				$('#hide_spotlight_bg').height(doc_h);
+				$('#hide_spotlight_bg').css('display', 'block');
+				
+				// scroll to top & lock scolling
+				$( "body" ).scrollTop( 0 );
+				$('body').css({'overflow':'hidden'});
+				$(document).bind('scroll',function () { 
+					window.scrollTo(0,0); 
+				});
+
+			}
+		}
+	}
+
+	function unlock_scroll(){
+		$(document).unbind('scroll'); 
+		$('#spotlight_bg').hide();
+		$('#hide_spotlight_bg').hide();
+		$('body').css({'overflow':'visible'});
+		$('.sso_panel').removeClass('sso_panel_spotlight');
+		$('#reg_notification').hide();
+
+		// 延後吵人
+		var duedate = new Date();
+		var minutes = 30240; //21 * 24 * 60 mins 不吵 (21天)
+		duedate.setTime(duedate.getTime() + (minutes * 60 * 1000));
+		$.cookie('_psk_reg_no_noti', '1', { expires: duedate });
+	}
+
+	// click to unlock
+	$('#hide_spotlight_bg')
+		.on('click', function(){
+			unlock_scroll();
+		})
+		.bind('touchstart', function(){
+			unlock_scroll();
+		});
+
+	$(window).resize(function() {
+		$('#spotlight_bg').width($('#categories_container').width());
+		$('#spotlight_bg').height($('html').innerHeight());
+		$('#hide_spotlight_bg').width($('#categories_container').width());
+		$('#hide_spotlight_bg').height($('html').innerHeight());
+	});
+
+})(jQuery);
