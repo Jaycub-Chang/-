@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const ar = [2, 4, 6, 8, { name: 'vic', age: 20 }];
+        const br = [...ar];
+        const cr = JSON.parse(JSON.stringify(ar));
+
+        ar[1] = 100;
+        console.log(ar);
+        console.log(br);
+        console.log(cr);
+        console.log('----');
+        ar[4].name = 'david';
+        br[4].age = 40;
+        console.log(ar);
+        console.log(br);
+        console.log(cr);
+        console.log('----');
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

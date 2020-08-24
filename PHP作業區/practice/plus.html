@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="a"> + <input type="number" id="b"> <button id="result">=</button> <span id="total"></span>
+
+
+    <script>
+        const a = document.getElementById('a');
+        const b = document.getElementById('b');
+        const result = document.querySelector('#result');
+        result.addEventListener('click', () => {
+            const a1 = a.value;
+            const b1 = b.value;
+            fetch(`20200821_2.php?a=${a1}&b=${b1}`)
+                .then((res) => res.json())
+                .then((obj) => document.querySelector('#total').innerHTML = obj.answer)
+        });
+    </script>
+
+</body>
+
+</html>
