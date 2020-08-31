@@ -15,12 +15,31 @@ if (!isset($page_name)) $page_name = '';
                     <a class="nav-link" href="./compose_page.php">首頁<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item <?= $page_name == 'dataListPage' ? 'active' : '' ?>">
-                    <a class="nav-link" href="./datalist2.php">產品列表</a>
+                    <a class="nav-link" href="./datalist2.php">產品列表(由php生成)</a>
+                </li>
+                <li class="nav-item <?= $page_name == 'data-list3' ? 'active' : '' ?>">
+                    <a class="nav-link" href="./datalist3.php">產品列表(由js生成)</a>
                 </li>
                 <li class="nav-item <?= $page_name == 'addDataPage' ? 'active' : '' ?>">
                     <a class="nav-link" href="./addDataList.php">新增資料</a>
                 </li>
             </ul>
+            <?php if (isset($_SESSION['admin'])) : ?>
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link"><?= $_SESSION['admin']['nickname'] ?></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./logoutsql.php">登出</a>
+                    </li>
+                </ul>
+            <?php else : ?>
+                <ul class="navbar-nav">
+                    <li class="nav-item <?= $page_name == 'loginSqlPage' ? 'active' : '' ?>">
+                        <a class="nav-link" href="./loginsql.php">登入</a>
+                    </li>
+                </ul>
+            <?php endif; ?>
         </div>
     </div>
 

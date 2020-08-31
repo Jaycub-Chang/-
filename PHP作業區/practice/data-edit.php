@@ -1,8 +1,24 @@
 <?php
-$page_title = '新增檔案頁面';
-$page_name = 'addDataPage';
-require __DIR__ . './parts/__connect_db.php';
+$page_title = '編輯檔案頁面';
+$page_name = 'editDataPage';
+require __DIR__ . '/parts/__connect_db.php';
 require __DIR__ . '/parts/__admin_required.php';
+
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+if (empty($id)) {
+    header('Location: datalist2.php');
+    exit;
+}
+
+$sql = " SELECT * FROM address_book WHERE id=$id";
+$row = $pdo->query($sql)->fetch();
+if (empty($row)) {
+    header('Location: datalist2.php');
+    exit;
+}
+
+
+
 ?>
 <style>
     small.errorMsg {
@@ -23,29 +39,31 @@ require __DIR__ . '/parts/__admin_required.php';
     <div class="card col-lg-6">
 
         <div class="card-body">
-            <h5 class="card-title">新增資料頁面</h5>
+            <h5 class="card-title">編輯資料頁面</h5>
             <form method="post" name="form1" onsubmit="checkForm(); return false;" novalidate>
+                <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <div class="form-group">
                     <label for="name"><span class="star">**</span>姓名</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required value="<?= htmlentities($row['name']) ?>">
                     <small class="errorMsg form-text"></small>
                 </div>
                 <div class="form-group">
-                    <label for="mobile"><span class="star">**</span>行動電話</label> <input type="tel" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" pattern="09\d{2}-?\d{3}-?\d{3}" required>
+                    <label for="mobile"><span class="star">**</span>行動電話</label>
+                    <input type="tel" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" pattern="09\d{2}-?\d{3}-?\d{3}" required value="<?= htmlentities($row['mobile']) ?>">
                     <small class="errorMsg form-text"></small>
                 </div>
                 <div class="form-group">
                     <label for="email"><span class="star">**</span>電子信箱</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required value="<?= htmlentities($row['email']) ?>">
                     <small class="errorMsg form-text"></small>
                 </div>
                 <div class="form-group">
                     <label for="birthday">生日</label>
-                    <input type="date" class="form-control" id="birthday" placeholder="Enter birthday" name="birthday">
+                    <input type="date" class="form-control" id="birthday" placeholder="Enter birthday" name="birthday" value="<?= htmlentities($row['birthday']) ?>">
                 </div>
                 <div class="form-group">
                     <label for="address">地址</label>
-                    <textarea class="form-control" name="address" id="address" rows="3" placeholder="Enter address"></textarea>
+                    <textarea class="form-control" name="address" id="address" rows="3" placeholder="Enter address"><?= htmlentities($row['address']) ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" id="submitBtn">確認送出</button>
             </form>
@@ -94,7 +112,7 @@ require __DIR__ . '/parts/__admin_required.php';
 
         const fd = new FormData(document.form1);
         if (isPass) {
-            fetch('addDataList_api.php', {
+            fetch('editDataList_api.php', {
                     method: 'POST',
                     body: fd,
                 })
@@ -102,13 +120,13 @@ require __DIR__ . '/parts/__admin_required.php';
                 .then(str => {
                     console.log(str);
                     if (str.success) {
-                        postMsg.innerHTML = '新增成功';
+                        postMsg.innerHTML = '修改成功';
                         postMsg.className = 'alert alert-success';
                         setTimeout(() => {
-                            location.href = 'datalist2.php';
+                            location.href = '<?= $_SERVER['HTTP_REFERER'] ?? "data-list.php" ?>;
                         }, 3000);
                     } else {
-                        postMsg.innerHTML = str.error || '新增失敗';
+                        postMsg.innerHTML = str.error || '修改失敗';
                         postMsg.className = 'alert alert-danger';
                         submitBtn.style.display = 'block';
                     }

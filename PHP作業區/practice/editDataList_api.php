@@ -24,16 +24,16 @@ if (!preg_match('/^09\d{2}-?\d{3}-?\d{3}$/', $_POST['mobile'])) {
     exit;
 };
 
-
-if (!preg_match('/^09\d{2}-?\d{3}-?\d{3}$/', $_POST['mobile'])) {
-    $output['code'] = '402';
-    $output['error'] = '請輸入正確手機號碼格式!';
+if ($_POST['id'] < 1) {
+    $output['code'] = '403';
+    $output['error'] = '查詢無id';
     echo json_encode($output, JSON_UNESCAPED_UNICODE);
     exit;
 };
 
 
-$sql = "INSERT INTO `address_book`(`name`, `mobile`, `email`, `birthday`, `address`, `created_date`) VALUES (?, ?, ?, ?, ?, NOW())";
+
+$sql = "UPDATE `address_book` SET `name`=?,`mobile`=?,`email`=?,`birthday`=?,`address`=? WHERE `id`=?";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
@@ -42,6 +42,7 @@ $stmt->execute([
     $_POST['email'],
     $_POST['birthday'],
     $_POST['address'],
+    $_POST['id'],
 ]);
 
 if ($stmt->rowCount()) {

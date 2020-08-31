@@ -44,7 +44,9 @@ if ($totalRows > 0) {
 
         <thead>
             <tr>
-                <th scope="col"></th>
+                <?php if (isset($_SESSION['admin'])) : ?>
+                    <th scope="col"></th>
+                <?php endif; ?>
                 <th scope="col">#</th>
                 <th scope="col">姓名</th>
                 <th scope="col">手機</th>
@@ -52,12 +54,17 @@ if ($totalRows > 0) {
                 <th scope="col">生日</th>
                 <th scope="col">地址</th>
                 <th scope="col">創建日期</th>
+                <?php if (isset($_SESSION['admin'])) : ?>
+                    <th scope="col">編輯</th>
+                <?php endif; ?>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($data as $row) : ?>
                 <tr class="dataTr">
-                    <td><a href="dataDelete.php?id=<?= $row['id'] ?>" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt trashcan" data-id="<?= $row['id'] ?>"></a></td>
+                    <?php if (isset($_SESSION['admin'])) : ?>
+                        <td><a href="dataDelete.php?id=<?= $row['id'] ?>" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt trashcan" data-id="<?= $row['id'] ?>"></a></td>
+                    <?php endif; ?>
                     <td><?= $row['id'] ?></td>
                     <td><?= $row['name'] ?></td>
                     <td><?= $row['mobile'] ?></td>
@@ -65,6 +72,9 @@ if ($totalRows > 0) {
                     <td><?= $row['birthday'] ?></td>
                     <td><?= $row['address'] ?></td>
                     <td><?= $row['created_date'] ?></td>
+                    <?php if (isset($_SESSION['admin'])) : ?>
+                        <td><a href="data-edit.php?id=<?= $row['id'] ?>"><i class="fas fa-edit"></i></a></td>
+                    <?php endif; ?>
                 </tr>
             <?php endforeach; ?>
         </tbody>
