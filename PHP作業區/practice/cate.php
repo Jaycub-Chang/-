@@ -24,7 +24,7 @@ foreach ($cates as $k => $v) {
 }
 
 
-// echo json_encode($cates, JSON_UNESCAPED_UNICODE);
+echo json_encode($cates, JSON_UNESCAPED_UNICODE);
 
 
-echo json_encode($rows, JSON_UNESCAPED_UNICODE);
+// echo json_encode($rows, JSON_UNESCAPED_UNICODE);
