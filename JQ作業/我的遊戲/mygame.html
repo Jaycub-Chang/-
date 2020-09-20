@@ -116,9 +116,14 @@
             heroReady = true;
         };
         heroImage.src = "./我的素材/向下-2.png";
+        let heroLivesImage = new Image();
+        heroLivesImage.src = './我的素材/heroLife.png';
 
         // 1 left 2 right 
         let hero_direction = null;
+
+        //collide hit effect
+        let shockwaveHitImage = new Image();
 
 
         //strike shockwave image
@@ -127,9 +132,10 @@
         shockwaveImage.onload = () => {
             shockwaveReady = true;
         };
-        shockwaveImage.src = "";
-        let strike_once = false;
+        let strike_once = false;  //make sure strike_once when press
 
+        //monster image
+        let monsterImage = new Image();
 
         // Game objects
         const hero = {
@@ -137,30 +143,50 @@
             x: 0,
             y: 0
         };
-        let monster = [];
-
-        let shockwave = [];
-
+        const heroLives = [1, 2, 3, 4, 5]
+        let lossHealth = false;
+        let monsters = [];
+        let shockwaves = [];
         let monstersKill = 0;
+        let shockwavesHit = [];
+
+
+        //audio
+        const backgroundMusicAudio = new Audio('./我的素材/audio/Wartime.mp3');
+        const smallExplosionAudio = new Audio('./我的素材/audio/小型爆炸-1.wav');
+        const heroDieAudio = new Audio('./我的素材/audio/死亡.wav');
 
         //let motion smooth - player input
         const keysDown = {};
 
         addEventListener("keydown", function (e) {
+            backgroundMusicAudio.play();
             keysDown[e.keyCode] = true;
             //only strike once
-            if (e.keyCode == 81) {
+            if (e.keyCode == 81 && hero_direction) {
                 strike_once = true;
             };
         }, false);
 
         addEventListener("keyup", function (e) {
             delete keysDown[e.keyCode];
-            strike_once
+            if (lossHealth) {
+                heroLives.pop();
+                lossHealth = false;
+            };
         }, false);
+
+        backgroundMusicAudio.addEventListener('ended', () => {
+            backgroundMusicAudio.play();
+        });
+
+        heroDieAudio.addEventListener('ended', () => {
+            alert(`GAME OVER ！ You have killed ${monstersKill} monsters！`);
+        });
 
         //change pic make gif
         let gif_loop_number = 1;
+
 
         // Update game objects
         const update = (modifier) => {
@@ -265,81 +291,187 @@
                     // hero.x += hero.speed * modifier;
                 };
                 if (strike_once == true) {
-                    shockwave.push({
-                        speed: 300, // movement in pixels per second
+                    shockwaves.push({
+                        speed: 200, // movement in pixels per second
                         x: hero.x,
                         y: hero.y,
                         direction: hero_direction,
                     });
                     strike_once = false;
                 };
+
+            };
+
+            //monster walk
+            if (monsters.length) {
+                monsters.forEach((item) => {
+                    if (item.direction == 2) {
+                        item.x += item.speed * modifier;
+                        item.speed += 2;
+                    };
+                    if (item.direction == 1) {
+                        item.x -= item.speed * modifier;
+                        item.speed += 2;
+                    };
+                });
             };
 
 
             //skill effect fly
-            if (shockwave.length) {
-                shockwave.forEach(item => {
+            if (shockwaves.length) {
+                shockwaves.forEach(item => {
                     if (item.direction == 2) {
                         item.x += item.speed * modifier;
-                        item.speed += 50;
+                        item.speed += 20;
                     };
                     if (item.direction == 1) {
                         item.x -= item.speed * modifier;
-                        item.speed += 50;
+                        item.speed += 20;
                     };
                 });
             };
+
+
+            // check if monster hit by shockwave
+            // check if monster touch hero
+            monsters.forEach((a_monster) => {
+                shockwaves.forEach((a_shockwave) => {
+                    if (
+                        a_monster.x <= (a_shockwave.x + 70)
+                        && a_shockwave.x <= (a_monster.x + 70)
+                        && a_monster.y <= (a_shockwave.y + 70)
+                        && a_shockwave.y <= (a_monster.y + 70)
+                    ) {
+                        console.log('hit');
+                        ++monstersKill;
+                        a_monster.get_hit_by_one_shockwave = true;  //remove in render
+                        a_shockwave.has_been_used = true;           //remove in render
+                        shockwavesHit.push({
+                            x: a_monster.x,
+                            y: a_monster.y,
+                        });
+                        smallExplosionAudio.play();
+                    }
+                })
+                if (
+                    a_monster.x <= (hero.x + 70)
+                    && hero.x <= (a_monster.x + 70)
+                    && a_monster.y <= (hero.y + 60)
+                    && hero.y <= (a_monster.y + 60)
+                ) {
+                    heroImage.src = "./我的素材/pain.png";
+                    lossHealth = true;
+                };
+            })
+
         };
+
+
 
 
         // Draw everything
         const render = () => {
-            let exist_shockwave = [];
+            let exist_shockwaves = [];
+            let exist_monsters = [];
             ctx.clearRect(0, 0, canvas.width, canvas.height);  // clear canvas recycle memory
 
             if (bgReady) {
                 ctx.drawImage(bgImage, -100, 0, 1800, 800);
             }
 
-            if (heroReady) {
-                ctx.drawImage(heroImage, hero.x, hero.y, 80, 80);
-            }
-            if (shockwave.length) {
-                // console.log(shockwave);
-                shockwave.forEach((item) => {
-                    if (item.direction == 1) {
-                        shockwaveImage.src = './我的素材/shockwave01.png';
-                        ctx.drawImage(shockwaveImage, item.x, item.y, 80, 80);
-                    };
-                    if (item.direction == 2) {
-                        shockwaveImage.src = './我的素材/shockwave02.png';
-                        ctx.drawImage(shockwaveImage, item.x, item.y, 80, 80);
-                    };
-                    if (item.x > 0 && item.x < 1600) {   //recycle memory
-                        exist_shockwave.push(item);
+
+            if (monsters.length) {
+                monsters.forEach((item) => {
+                    monsterImage.src = './我的素材/monster.png';
+                    ctx.drawImage(monsterImage, item.x, item.y, 70, 70);
+                    if (item.x >= -100 && item.x <= 1700 && !item.get_hit_by_one_shockwave) {   //recycle memory
+                        exist_monsters.push(item);
                     };
                 });
             };
 
-            shockwave = exist_shockwave;
+            if (heroReady) {
+                if (!heroLives.length) {
+                    heroImage.src = "./我的素材/die.png";
+                    ctx.drawImage(heroImage, hero.x, hero.y, 100, 70);
+                    heroDieAudio.play();
+                } else {
+                    ctx.drawImage(heroImage, hero.x, hero.y, 80, 80);
+                };
+            }
 
+            if (shockwaves.length) {
+                // console.log(shockwave);
+                shockwaves.forEach((item) => {
+                    if (item.direction == 1) {
+                        shockwaveImage.src = './我的素材/shockwave01.png';
+                        ctx.drawImage(shockwaveImage, item.x - 50, item.y, 70, 70);
+                    };
+                    if (item.direction == 2) {
+                        shockwaveImage.src = './我的素材/shockwave02.png';
+                        ctx.drawImage(shockwaveImage, item.x + 50, item.y, 70, 70);
+                    };
+                    if (item.x > 0 && item.x < 1600 && !item.has_been_used) {   //recycle memory
+                        exist_shockwaves.push(item);
+                    };
+                });
+            };
+
+            if (shockwavesHit.length) {
+                shockwavesHit.forEach((item) => {
+                    shockwaveHitImage.src = './我的素材/onhit01.png';
+                    ctx.drawImage(shockwaveHitImage, item.x, item.y, 90, 90);
+                });
+            };
+
+            if (heroLives.length) {
+                let life_x = 1420;
+                heroLives.forEach(life => {
+                    ctx.drawImage(heroLivesImage, life_x, 20, 30, 30);
+                    life_x += 35;
+                })
+            }
+
+
+            shockwaves = exist_shockwaves;
+            monsters = exist_monsters;
             // Score
             ctx.fillStyle = "rgb(44, 62, 80)";
-            ctx.font = "36px Helvetica bold";
+            ctx.font = "36px Helvetica bolder";
             ctx.textAlign = "left";
             ctx.textBaseline = "top";
             ctx.fillText("Enimies killed: " + monstersKill, 80, 20);
+            ctx.fillText("Your Lives: " + heroLives.length, 1200, 20);
+
         };
 
+        const generateMonster = () => {
+            let monster_direction = parseInt(Math.random() * 2) + 1;
+            let monster_y = parseInt(Math.random() * 400) + 300;
+            let monster_x = '';
+            if (monster_direction == 1) {
+                monster_x = 1700;
+            };
+            if (monster_direction == 2) {
+                monster_x = -100;
+            };
+            monsters.push({
+                speed: 50, // movement in pixels per second
+                x: monster_x,
+                y: monster_y,
+                direction: monster_direction,
+            });
+        };
+
+
+        const removeHitEffect = () => {
+            shockwavesHit.shift();
+        };
 
         // Reset the game when the player catches a monster
         const reset = () => {
             hero.x = canvas.width / 2;
             hero.y = canvas.height / 2;
-
-            // Throw the monster somewhere on the screen randomly
-            monster.x = 32 + (Math.random() * (canvas.width - 64));
-            monster.y = 32 + (Math.random() * (canvas.height - 64));
         };
 
 
@@ -350,16 +482,29 @@
             update(delta / 1000);
             render();
             then = now;
-
+            if ((now - function_loop_time) / 1000 >= 0.7) {       //removeHitEffect setInterval
+                removeHitEffect();
+            };
+            if ((now - function_loop_time) / 1000 >= 0.7) {     //generateMonster setInterval
+                generateMonster();
+                function_loop_time = now;
+            };
             // Request to do this again ASAP
             requestAnimationFrame(main);
         };
 
-
         //game start
+        let function_loop_time = Date.now();
         let then = Date.now();
         reset();
         main();
+
+        //resize window when enter
+        window.onload = () => {
+            window.visualViewport.width = '1920px';
+            window.visualViewport.height = '943px';
+        };
+
 
     </script>
 </body>
