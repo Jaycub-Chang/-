@@ -7,6 +7,8 @@
     <title>My ARPG game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 
     <style>
         html {
@@ -61,6 +63,15 @@
             width: 100%;
             height: 100%;
         }
+
+        span {
+            color: crimson;
+            font-weight: bold;
+        }
+
+        li {
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -72,11 +83,40 @@
             </div>
             <h4 id="author">Created by Jaycub</h4>
         </div>
-
-
     </div>
 
-
+    <!-- intro Modal -->
+    <div class="modal fade" data-backdrop="static" id="game_intro" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="text-info font-weight-bold mx-auto" id="exampleModalCenterTitle">小杰快打
+                    </h2>
+                </div>
+                <h3 class="mx-auto pt-3">新手教學</h3>
+                <div class="modal-body">
+                    <div class="container">
+                        <ol>
+                            <li>目標：請盡量於存活時間內殺死越多敵人，獲得越高的分數。</li>
+                            <li>操作：請以鍵盤的<span> <i class="fas fa-arrow-circle-up"></i> <i
+                                        class="fas fa-arrow-circle-down"></i> <i class="fas fa-arrow-circle-left"></i>
+                                    <i class="fas fa-arrow-circle-right"></i> </span>控制方向。
+                            </li>
+                            <li>攻擊：按下 <span>Q</span> 對左右方發射氣功波。</li>
+                            <li>總生命有 <span>5</span> 條。</li>
+                            <li>擊殺小隻怪物(血量少)得 <span>1</span> 分。<br>大隻怪物(血量多) <span>20</span> 分。</li>
+                            <li>遊戲共有 <span>3</span> 個難度等級，會在 <span>30</span> 、 <span>200</span> 分時自動提升難度。</li>
+                            <li>有背景音樂，不想開啟可使用靜音。</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-info mx-auto" id="closeIntroBtn">知道了！</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -93,6 +133,9 @@
 
 
     <script>
+        const closeIntroBtn = document.querySelector('#closeIntroBtn');
+        const game_area = document.querySelector('.game_area');
+
         // Create the canvas
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d");
@@ -132,7 +175,7 @@
         shockwaveImage.onload = () => {
             shockwaveReady = true;
         };
-        let strike_once = false;  //make sure strike_once when press
+        let strike_once = true;  //make sure strike_once when press
 
         //monster image
         let monsterImage = new Image();
@@ -150,6 +193,9 @@
         let monstersKill = 0;
         let shockwavesHit = [];
 
+        //level setting
+        let game_level = 1;
+        let gameLevelImage = new Image();
 
         //audio
         const backgroundMusicAudio = new Audio('./我的素材/audio/Wartime.mp3');
@@ -160,15 +206,23 @@
         const keysDown = {};
 
         addEventListener("keydown", function (e) {
-            backgroundMusicAudio.play();
             keysDown[e.keyCode] = true;
             //only strike once
             if (e.keyCode == 81 && hero_direction) {
-                strike_once = true;
+                if (strike_once == true) {
+                    shockwaves.push({
+                        speed: 200, // movement in pixels per second
+                        x: hero.x,
+                        y: hero.y,
+                        direction: hero_direction,
+                    });
+                    strike_once = false;
+                };
             };
         }, false);
 
         addEventListener("keyup", function (e) {
+            strike_once = true;
             delete keysDown[e.keyCode];
             if (lossHealth) {
                 heroLives.pop();
@@ -180,8 +234,23 @@
             backgroundMusicAudio.play();
         });
 
+
+        const gameOverImage = new Image();
+        gameOverImage.src = './我的素材/game_over.jpg';
         heroDieAudio.addEventListener('ended', () => {
-            alert(`GAME OVER ！ You have killed ${monstersKill} monsters！`);
+            cancelAnimationFrame(mainLoop);
+            ctx.drawImage(gameOverImage, 400, 130, 800, 600);
+            ctx.fillStyle = "rgb(255, 255, 255)";
+            ctx.font = "36px Helvetica bolder";
+            ctx.textAlign = "left";
+            ctx.textBaseline = "top";
+            ctx.fillText("你的分數:  " + monstersKill, 670, 500);
+            ctx.fillText("目前關卡:  " + game_level, 670, 550);
+            ctx.fillStyle = "rgb(255, 211, 0)";
+            ctx.fillText("點擊畫面並重啟遊戲", 620, 650);
+            game_area.addEventListener('click', () => {
+                location.href = location.href;
+            });
         });
 
         //change pic make gif
@@ -280,7 +349,6 @@
                     setTimeout(() => {
                         heroImage.src = `./我的素材/向左走路-2.png`;
                     }, 400);
-                    // hero.x += hero.speed * modifier;
                 };
                 if (hero_direction == 2) {
 
@@ -288,18 +356,7 @@
                     setTimeout(() => {
                         heroImage.src = `./我的素材/向右走路-2.png`;
                     }, 400);
-                    // hero.x += hero.speed * modifier;
                 };
-                if (strike_once == true) {
-                    shockwaves.push({
-                        speed: 200, // movement in pixels per second
-                        x: hero.x,
-                        y: hero.y,
-                        direction: hero_direction,
-                    });
-                    strike_once = false;
-                };
-
             };
 
             //monster walk
@@ -307,11 +364,11 @@
                 monsters.forEach((item) => {
                     if (item.direction == 2) {
                         item.x += item.speed * modifier;
-                        item.speed += 2;
+                        item.speed += 1;
                     };
                     if (item.direction == 1) {
                         item.x -= item.speed * modifier;
-                        item.speed += 2;
+                        item.speed += 1;
                     };
                 });
             };
@@ -337,16 +394,27 @@
             monsters.forEach((a_monster) => {
                 shockwaves.forEach((a_shockwave) => {
                     if (
-                        a_monster.x <= (a_shockwave.x + 70)
-                        && a_shockwave.x <= (a_monster.x + 70)
-                        && a_monster.y <= (a_shockwave.y + 70)
-                        && a_shockwave.y <= (a_monster.y + 70)
+                        (a_monster.x <= (a_shockwave.x + 70)
+                            && a_shockwave.x <= (a_monster.x + 70)
+                            && a_monster.y <= (a_shockwave.y + 70)
+                            && a_shockwave.y <= (a_monster.y + 70)
+                            && a_monster.category <= 4) ||
+                        (a_monster.x <= (a_shockwave.x + 70)
+                            && a_shockwave.x <= (a_monster.x + 240)
+                            && a_monster.y <= (a_shockwave.y + 70)
+                            && a_shockwave.y <= (a_monster.y + 200)
+                            && a_monster.category == 5)
                     ) {
-                        console.log('hit');
-                        ++monstersKill;
-                        a_monster.get_hit_by_one_shockwave = true;  //remove in render
+                        a_monster.health -= 1;  //remove in render
+                        if (a_monster.health == 0 && a_monster.category <= 4) {
+                            ++monstersKill;
+                        };
+                        if (a_monster.health == 0 && a_monster.category == 5) {
+                            monstersKill += 20;
+                        };
                         a_shockwave.has_been_used = true;           //remove in render
                         shockwavesHit.push({
+                            category: a_monster.category,
                             x: a_monster.x,
                             y: a_monster.y,
                         });
@@ -354,10 +422,16 @@
                     }
                 })
                 if (
-                    a_monster.x <= (hero.x + 70)
-                    && hero.x <= (a_monster.x + 70)
-                    && a_monster.y <= (hero.y + 60)
-                    && hero.y <= (a_monster.y + 60)
+                    (a_monster.x <= (hero.x + 70)
+                        && hero.x <= (a_monster.x + 70)
+                        && a_monster.y <= (hero.y + 60)
+                        && hero.y <= (a_monster.y + 60)
+                        && a_monster.category <= 4) ||
+                    (a_monster.x <= (hero.x + 70)
+                        && hero.x <= (a_monster.x + 180)
+                        && a_monster.y <= (hero.y + 70)
+                        && hero.y <= (a_monster.y + 150)
+                        && a_monster.category == 5)
                 ) {
                     heroImage.src = "./我的素材/pain.png";
                     lossHealth = true;
@@ -382,9 +456,19 @@
 
             if (monsters.length) {
                 monsters.forEach((item) => {
-                    monsterImage.src = './我的素材/monster.png';
-                    ctx.drawImage(monsterImage, item.x, item.y, 70, 70);
-                    if (item.x >= -100 && item.x <= 1700 && !item.get_hit_by_one_shockwave) {   //recycle memory
+                    if (item.category == 5 && item.direction == 1) {
+                        monsterImage.src = './我的素材/monster2-left.png';
+                        ctx.drawImage(monsterImage, item.x, item.y, 240, 200);
+                    };
+                    if (item.category == 5 && item.direction == 2) {
+                        monsterImage.src = './我的素材/monster2-right.png';
+                        ctx.drawImage(monsterImage, item.x, item.y, 240, 200);
+                    };
+                    if (item.category <= 4) {
+                        monsterImage.src = './我的素材/monster.png';
+                        ctx.drawImage(monsterImage, item.x, item.y, 70, 70);
+                    };
+                    if (item.x >= -100 && item.x <= 1700 && (item.health != 0)) {   //recycle memory
                         exist_monsters.push(item);
                     };
                 });
@@ -420,7 +504,11 @@
             if (shockwavesHit.length) {
                 shockwavesHit.forEach((item) => {
                     shockwaveHitImage.src = './我的素材/onhit01.png';
-                    ctx.drawImage(shockwaveHitImage, item.x, item.y, 90, 90);
+                    if (item.category == 5) {
+                        ctx.drawImage(shockwaveHitImage, item.x, item.y, 210, 175);
+                    } else {
+                        ctx.drawImage(shockwaveHitImage, item.x, item.y, 90, 90);
+                    };
                 });
             };
 
@@ -432,6 +520,28 @@
                 })
             }
 
+            //render level
+            if (monstersKill >= 30) {
+                game_level = 2;
+            };
+            if (monstersKill >= 200) {
+                game_level = 3;
+            };
+            switch (game_level) {
+                case 1:
+                    gameLevelImage.src = './我的素材/level1.png';
+                    ctx.drawImage(gameLevelImage, 680, 20, 225, 89);
+                    break;
+                case 2:
+                    gameLevelImage.src = './我的素材/level2.png';
+                    ctx.drawImage(gameLevelImage, 680, 20, 225, 89);
+                    break;
+                case 3:
+                    gameLevelImage.src = './我的素材/level3.png';
+                    ctx.drawImage(gameLevelImage, 680, 20, 225, 89);
+                    break;
+            };
+
 
             shockwaves = exist_shockwaves;
             monsters = exist_monsters;
@@ -440,12 +550,35 @@
             ctx.font = "36px Helvetica bolder";
             ctx.textAlign = "left";
             ctx.textBaseline = "top";
-            ctx.fillText("Enimies killed: " + monstersKill, 80, 20);
+            ctx.fillText("Your Score: " + monstersKill, 80, 20);
             ctx.fillText("Your Lives: " + heroLives.length, 1200, 20);
 
         };
 
         const generateMonster = () => {
+            let monster_category = 1;  // boss = 5 , little monster = 1-4 
+            let monster_speed = 20;
+            switch (game_level) {
+                case 1:
+                    monster_speed = 20;
+
+                    break;
+                case 2:
+                    monster_category = parseInt(Math.random() * 5) + 1;
+                    monster_speed = 50;
+                    if (monster_category == 5) {
+                        monster_speed = 5;
+                    }
+                    break;
+                case 3:
+                    monster_category = 5;
+                    monster_speed = 15;
+                    break;
+            };
+            let monster_health = 1;
+            if (monster_category == 5) {
+                monster_health = 10;
+            };
             let monster_direction = parseInt(Math.random() * 2) + 1;
             let monster_y = parseInt(Math.random() * 400) + 300;
             let monster_x = '';
@@ -456,10 +589,12 @@
                 monster_x = -100;
             };
             monsters.push({
-                speed: 50, // movement in pixels per second
+                speed: monster_speed, // movement in pixels per second
                 x: monster_x,
                 y: monster_y,
                 direction: monster_direction,
+                category: monster_category,
+                health: monster_health,
             });
         };
 
@@ -476,33 +611,40 @@
 
 
         // The main game loop
+        let mainLoop = null;
         const main = () => {
             let now = Date.now();
             let delta = now - then;
             update(delta / 1000);
             render();
             then = now;
-            if ((now - function_loop_time) / 1000 >= 0.7) {       //removeHitEffect setInterval
+            if ((now - function_loop_time) / 1000 >= 0.3) {       //removeHitEffect setInterval
                 removeHitEffect();
             };
-            if ((now - function_loop_time) / 1000 >= 0.7) {     //generateMonster setInterval
+            if ((now - function_loop_time) / 1000 >= 1) {     //generateMonster setInterval
                 generateMonster();
                 function_loop_time = now;
             };
+
             // Request to do this again ASAP
-            requestAnimationFrame(main);
+            mainLoop = requestAnimationFrame(main);
         };
 
         //game start
         let function_loop_time = Date.now();
         let then = Date.now();
         reset();
-        main();
+        closeIntroBtn.addEventListener('click', () => {
+            $('#game_intro').modal('hide');
+            main();
+            backgroundMusicAudio.play();
+        });
 
         //resize window when enter
         window.onload = () => {
             window.visualViewport.width = '1920px';
             window.visualViewport.height = '943px';
+            $('#game_intro').modal('show');
         };
 
 
