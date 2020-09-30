@@ -72,6 +72,11 @@
         li {
             font-size: 20px;
         }
+        small{
+            font-size: 20px;
+            display: block;
+        }
+
     </style>
 </head>
 
@@ -99,14 +104,21 @@
                     <div class="container">
                         <ol>
                             <li>目標：請盡量於存活時間內殺死越多敵人，獲得越高的分數。</li>
+                            <br>
                             <li>操作：請以鍵盤的<span> <i class="fas fa-arrow-circle-up"></i> <i
                                         class="fas fa-arrow-circle-down"></i> <i class="fas fa-arrow-circle-left"></i>
                                     <i class="fas fa-arrow-circle-right"></i> </span>控制方向。
                             </li>
-                            <li>攻擊：按下 <span>Q</span> 對左右方發射氣功波。</li>
+                            <br>
+                            <li>攻擊：按下 <span>Q</span> 對 <span>左右</span> 方發射氣功波。</li>
+                            <small>＊注意方向為上下時無法攻擊！</small>
+                            <br>
                             <li>總生命有 <span>5</span> 條。</li>
+                            <br>
                             <li>擊殺小隻怪物(血量少)得 <span>1</span> 分。<br>大隻怪物(血量多) <span>20</span> 分。</li>
+                            <br>
                             <li>遊戲共有 <span>3</span> 個難度等級，會在 <span>30</span> 、 <span>200</span> 分時自動提升難度。</li>
+                            <br>
                             <li>有背景音樂，不想開啟可使用靜音。</li>
                         </ol>
                     </div>
@@ -199,7 +211,9 @@
 
         //audio
         const backgroundMusicAudio = new Audio('./我的素材/audio/Wartime.mp3');
+        backgroundMusicAudio.volume = 0.3;
         const smallExplosionAudio = new Audio('./我的素材/audio/小型爆炸-1.wav');
+        smallExplosionAudio.volume = 0.5;
         const heroDieAudio = new Audio('./我的素材/audio/死亡.wav');
 
         //let motion smooth - player input
@@ -429,7 +443,7 @@
                         && a_monster.category <= 4) ||
                     (a_monster.x <= (hero.x + 70)
                         && hero.x <= (a_monster.x + 180)
-                        && a_monster.y <= (hero.y + 70)
+                        && a_monster.y <= (hero.y + 50)
                         && hero.y <= (a_monster.y + 150)
                         && a_monster.category == 5)
                 ) {
