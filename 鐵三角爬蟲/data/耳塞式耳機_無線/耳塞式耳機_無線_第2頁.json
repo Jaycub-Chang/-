@@ -1,0 +1,884 @@
+[
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-01_flsx-9n.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-03.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-05.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-06.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-07.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-08.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-09.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-10.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-11.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-12.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-13.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-14.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-C200BT-15.png"
+        ],
+        "product_info": {
+            "product_code": "ATH-C200BT",
+            "product_title": " 無線耳塞式耳機",
+            "product_summary": "",
+            "original_price": "定價: NT$1,800NT$1,800 優惠: NT$150 (8%)",
+            "current_price": "定價: NT$1,800NT$1,800 優惠: NT$150 (8%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "Ø12mm驅動單元清澈音色<br>",
+                    "搭載高性能驅動單元，實現播放音域寬廣、穿透力佳的聲音。",
+                    "搭載專用音響孔讓低頻更具厚實感<br>",
+                    "藉由音響孔提升低音清晰度，享受豐厚的低頻播放。",
+                    "以無線方式享受支援Bluetooth A2DP裝置的音樂播放",
+                    "支援AVRCP，可在手邊搖控操作播放或通話相關功能",
+                    "讓支援Bluetooth HFP/HSP的裝置實現免持通話功能",
+                    "支援SCMS-T，可以無線方式收看行動電視",
+                    "最多可記錄8台裝置的配對資訊",
+                    "9小時連續播放（充電時間：約3小時）",
+                    "半開放式構造，在確保密閉性的同時，也能輕易聽見周圍的聲音<br>",
+                    "採用人體工學設計可維持舒適佩戴感，長時間聆聽也不感疲累。",
+                    "佩戴面觸感舒適的矽膠機身<br>",
+                    "除輕盈小巧的機身之外，機殼亦採用矽膠材質。佩戴面柔軟不易偏移，提供輕鬆穩固的佩戴感。"
+                ],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "型號",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "待機時間",
+                        "工作溫度範圍",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "通話麥克風頻率響應",
+                        "重量",
+                        "附屬品"
+                    ],
+                    "value": [
+                        "Bluetooth 標準規格Ver.4.1",
+                        "2.4GHz（2.402GHz～2.480GHz）",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "SBC",
+                        "SCMS-T",
+                        "20～20,000 Hz",
+                        "ATH-C200BT",
+                        "動圈型",
+                        "Ø12mm",
+                        "106dB/mW",
+                        "20～20,000Hz",
+                        "32Ω",
+                        "DC3.7V鋰聚合物電池（內藏式）",
+                        "約3小時（依使用條件而異）",
+                        "約9小時（依使用條件而異）",
+                        "最長約200小時（依使用條件而異）",
+                        "5°C～40°C",
+                        "電容型",
+                        "全指向性",
+                        "-42dB（1V/Pa、at 1kHz）",
+                        "80～10,000Hz",
+                        "15g",
+                        "固定夾、 充電用USB連接線（30cm、USBType-A / Micro USB Type-B）"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-01.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-03.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-05.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-06.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-07.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-08.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-09.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-10.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-11.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/SPORT90BT-12.jpg"
+        ],
+        "product_info": {
+            "product_code": "ATH-SPORT90BT",
+            "product_title": " 無線運動耳機",
+            "product_summary": "",
+            "original_price": "定價: NT$5,700NT$5,700 優惠: NT$720 (13%)",
+            "current_price": "定價: NT$5,700NT$5,700 優惠: NT$720 (13%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "內建4GB記憶體，不須透過智慧型手機即可播放音樂",
+                    "提供4種尺寸的耳塞及輔助環，可依據使用習慣調整服貼佩戴感",
+                    "耐雨水、汗水，可水洗，令人安心的IPX5防水等級",
+                    "音樂播放器模式下連續播放最長約8小時，藍牙連接時連續播放最長約5小時",
+                    "高感度Ø6mm驅動單元與專用設計耳機擴大器，再現鮮明扎實的低音",
+                    "磁吸式偵測功能，將左右耳機貼合便能即刻暫停音樂",
+                    "外部聲音功能，享受音樂的同時也能確認周圍環境音",
+                    "導線帶有控制器，在耳際即可進行音樂播放、通話及音量調整等操作"
+                ],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "系統硬體需求",
+                        "工作溫度範圍",
+                        "支援作業系統",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "重量",
+                        "附屬品"
+                    ],
+                    "value": [
+                        "Bluetooth 標準規格Ver.5.0",
+                        "2.4GHz（2.402GHz～2.480GHz）",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP",
+                        "AAC、SBC",
+                        "SCMS-T",
+                        "20～20,000Hz",
+                        "4GB",
+                        "5℃～40℃",
+                        "Windows OS、macOS",
+                        "密閉式動圈型",
+                        "Ø6mm",
+                        "90dB/mW",
+                        "20～25,000Hz",
+                        "16Ω",
+                        "DC3.7V 鋰離子充電電池（内藏）",
+                        "約3小時（依使用條件而異）",
+                        "藍牙連接時：最長約5小時 / 音樂播放器（MP3/128kbps）：最長約8小時（依使用條件而異）",
+                        "MEMS型",
+                        "全指向性",
+                        "100～8,000Hz",
+                        "約22g",
+                        "40cm USB 充電線（USB Type-A/ Type-C™）、收納袋、耳塞（XS/S/M/L）、鰭式輔助環（XS/S/M/L）"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-01.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-03.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-05.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-06.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-07.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/CKR700BT-08.png"
+        ],
+        "product_info": {
+            "product_code": "ATH-CKR700BT ",
+            "product_title": " 無線耳塞式耳機",
+            "product_summary": "",
+            "original_price": "定價: NT$6,800NT$6,800 優惠: NT$1,220 (18%)",
+            "current_price": "定價: NT$6,800NT$6,800 優惠: NT$1,220 (18%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "搭載能展現清澈音場及逼真音像定位的專用設計Ø9.8mm驅動單元",
+                    "單次充電最長可使用7小時（",
+                    "搭載可引導出無線高音質的DAC/AMP晶片",
+                    "音響效果優異的鋁金屬機殼",
+                    "頸帶附屬控制器",
+                    "支援Siri/Google Assistant™語音智慧助理",
+                    "附有方便收納線材的磁扣",
+                    "柔軟可彎折的彈性頸帶",
+                    "對應鐵三角專用App「Connect」"
+                ],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "NCC 型式認證號碼",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "工作溫度範圍",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "重量",
+                        "附屬品"
+                    ],
+                    "value": [
+                        "Bluetooth標準規格Ver.5.0",
+                        "2.4GHz(2.402～2.480GHz)",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "LDAC、Qualcomm® aptX™ HD audio、 Qualcomm® aptX™ audio、AAC、SBC",
+                        "SCMS-T方式",
+                        "20～40,000Hz（取樣頻率為LDAC 96kHz、990kbps時）、20～20,000Hz（取樣頻率為44.1kHz時）",
+                        "CCAJ19LP67C0E2",
+                        "密閉動圈型",
+                        "Ø9.8mm",
+                        "103dB/mW",
+                        "5～40,000Hz",
+                        "16Ω",
+                        "DC3.7V 鋰聚合物電池(內建)",
+                        "約2小時（依使用條件而異）",
+                        "最長約7小時（依使用條件而異）",
+                        "5～40℃",
+                        "MEMS型",
+                        "全指向性",
+                        "−42dB(1V/Pa,at1kHz)",
+                        "約27.5g",
+                        "30cm充電用USB線（USB Type-A/USB Type-C）、耳塞（XS、S、M、L）、攜存袋、磁扣"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-01.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-03_4pst-p5.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-05_drq5-hq.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-06.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-07.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-08.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-09.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-10.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/7/ATH-CKR500BT-11.png"
+        ],
+        "product_info": {
+            "product_code": "ATH-CKR500BT",
+            "product_title": " 無線耳塞式耳機",
+            "product_summary": "",
+            "original_price": "定價: NT$4,000NT$4,000 優惠: NT$1,020 (26%)",
+            "current_price": "定價: NT$4,000NT$4,000 優惠: NT$1,020 (26%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "搭載能鮮明刻畫聲音細節的專用設計Ø9.8mm驅動單元",
+                    "單次充電最長可使用12小時（",
+                    "頸帶附屬控制器",
+                    "方便收納線材的磁扣",
+                    "支援Siri/Google Assistant™語音智慧助理",
+                    "不易漏音的密閉型耳機",
+                    "柔軟可彎折的彈性頸帶"
+                ],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "NCC 型式認證號碼",
+                        "型號",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "工作溫度範圍",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "通話麥克風頻率響應",
+                        "重量",
+                        "附屬品"
+                    ],
+                    "value": [
+                        "Bluetooth標準規格Ver.5.0",
+                        "2.4GHz(2.402～2.480GHz)",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "AAC、SBC",
+                        "SCMS-T方式",
+                        "20～20,000Hz",
+                        "CCAJ19LP61E0E4",
+                        "ATH-CKR500BT",
+                        "密閉動圈型",
+                        "Ø9.8mm",
+                        "103dB/mW",
+                        "5～35,000Hz",
+                        "16Ω",
+                        "DC3.7V 鋰聚合物電池(內建)",
+                        "約2小時（依使用條件而異）",
+                        "最長約12小時（依使用條件而異）",
+                        "5～40℃",
+                        "MEMS型",
+                        "全指向性",
+                        "−42dB(1V/Pa,at1kHz)",
+                        "50～4,000Hz",
+                        "約26.5g",
+                        "30cm充電用USB線（USB Type-A / USB Type-C）、耳塞（XS、S、M、L）、攜存袋、磁扣"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/8/ATH-CKR300BT_BK.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-03.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-05.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-06.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-07.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-08.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-09.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-10.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-11.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-12.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/9/ATH-CKR300BT-13.png"
+        ],
+        "product_info": {
+            "product_code": "ATH-CKR300BT",
+            "product_title": " 無線耳塞式耳機",
+            "product_summary": "",
+            "original_price": "定價: NT$2,500NT$2,500 優惠: NT$520 (21%)",
+            "current_price": "定價: NT$2,500NT$2,500 優惠: NT$520 (21%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "<span style=\"font-family: 'Microsoft JhengHei', SimHei, Arial",
+                    "搭載能呈現出原本聲音的全新Ø9.8mm驅動單元",
+                    "單次充電最長可使用8小時（",
+                    "導線附屬控制器",
+                    "支援Siri/Google Assistant™語音智慧助理",
+                    "不易漏音的密閉型耳機 ",
+                    "充滿光澤感的設計與多色機體選擇 "
+                ],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "NCC 型式認證號碼",
+                        "型號",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "工作溫度範圍",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "通話麥克風頻率響應",
+                        "重量",
+                        "附屬品"
+                    ],
+                    "value": [
+                        "Bluetooth標準規格Ver.5.0",
+                        "2.4GHz(2.402～2.480GHz)",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "AAC、SBC",
+                        "SCMS-T方式",
+                        "20～20,000Hz",
+                        "CCAJ19LP61E0E7",
+                        "ATH-CKR300BT",
+                        "密閉動圈型",
+                        "Ø9.8mm",
+                        "102dB/mW",
+                        "5～30,000Hz",
+                        "16Ω",
+                        "DC3.7V 鋰聚合物電池(內建)",
+                        "約2小時（依使用條件而異）",
+                        "最長約8小時（依使用條件而異）",
+                        "5～40℃",
+                        "MEMS型",
+                        "全指向型",
+                        "−42dB(1V/Pa,at1kHz)",
+                        "50～4,000Hz",
+                        "約13.5g",
+                        "30cm充電用USB線（USB Type-A / USB Type-C）、耳塞（XS、S、M、L）、攜存袋"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-01_m7g6-kb.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-03.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-05.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-06.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-07.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-08.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-09.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-10.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-11.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-12.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-13.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-CK150BT-14.jpg"
+        ],
+        "product_info": {
+            "product_code": "ATH-CK150BT ",
+            "product_title": " 無線耳塞式耳機",
+            "product_summary": "",
+            "original_price": "定價: NT$1,280NT$1,280 優惠: NT$180 (14%)",
+            "current_price": "定價: NT$1,280NT$1,280 優惠: NT$180 (14%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "不拘泥於任何音樂類型的高品質聲音",
+                    "即使是小耳朵的人也能輕易貼合使用",
+                    "防水等級IPX2",
+                    "單次充滿電最大可使用7小時",
+                    "不易漏音的密閉型耳機",
+                    "設置能對播放與通話進行操作及音量調整的控制器"
+                ],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "NCC 型式認證號碼",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "工作溫度範圍",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "通話麥克風頻率響應",
+                        "重量",
+                        "附屬品",
+                        "另售"
+                    ],
+                    "value": [
+                        "藍牙標準規格ver.5.0",
+                        "2.4GHz(2.402~2.480GHz)",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "SBC",
+                        "SCMT-T",
+                        "20~20,000Hz",
+                        "CCAJ19LP6320E6",
+                        "密閉式動圈型",
+                        "Ø8.8mm",
+                        "100dB/mW",
+                        "20~20,000Hz",
+                        "16Ω",
+                        "DC3.7V鋰聚合物充電電池（內藏）",
+                        "約2小時",
+                        "播放音樂時：最長約7小時（依使用條件而異）",
+                        "5~40℃",
+                        "電容型",
+                        "全指向型",
+                        "-42dB(1V/Pa, at1kHz)",
+                        "100~10,000Hz",
+                        "12.5g",
+                        "30cm USB充電線、矽膠耳塞（XS、S、M、L）",
+                        "替換用耳塞ER-CKM55"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/BT08NC-01.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/BT08NC-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/BT08NC-03.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/BT08NC-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/BT08NC-05.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/BT08NC-06.png"
+        ],
+        "product_info": {
+            "product_code": "ATH-BT08NC",
+            "product_title": " 無線抗噪耳機",
+            "product_summary": "",
+            "original_price": "",
+            "current_price": ""
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "輸出功率",
+                        "NCC 型式認證號碼",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "噪音抑制效果",
+                        "最大承受功率",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "待機時間",
+                        "工作溫度範圍",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "通話麥克風頻率響應",
+                        "重量",
+                        "附屬品",
+                        "另售"
+                    ],
+                    "value": [
+                        "Bluetooth標準規格Ver.3.0",
+                        "2.4GHz(2.402GHz～2.480GHz)",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "SBC、aptX、AAC",
+                        "SCMS-T",
+                        "20～20,000Hz(取樣頻率為44.1kHz時)",
+                        "Bluetooth標準規格Power Class2",
+                        "CCAE15LP0060T0",
+                        "動圈型",
+                        "Ø13.5mm",
+                        "100dB/mW(使用抗噪功能時)、100dB/mW(不使用抗噪功能時)",
+                        "20～24,000Hz",
+                        "最大-20dB (以本公司方式測定)",
+                        "10mW",
+                        "16Ω",
+                        "DC3.7V 鋰聚合物電池(內建)",
+                        "約3小時（依使用條件而異）",
+                        "使用Bluetooth及抗噪功能時：最長約8小時 / 僅使用Bluetooth功能時：最長約13小時 / 僅使用抗噪功能時：（有線連接時）最長約24小時　（依使用條件而異）",
+                        "最長約100小時（依使用條件而異）",
+                        "5℃～40℃",
+                        "駐極式電容型",
+                        "全指向性",
+                        "-42dB(1V/Pa、at1kHz)",
+                        "70～8,000Hz",
+                        "約35g（不含耳塞）",
+                        "Fine Fit耳塞（XS、S、M、L）、充電用USB導線(1.0m)、 連接用導線(1.2m)、飛機用轉接插頭、攜存袋",
+                        "更換用耳塞：ER-CKM55（XS、S、M、L）"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC100-01.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC100-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC100-03.png"
+        ],
+        "product_info": {
+            "product_code": "ATH-ANC100BT",
+            "product_title": " 無線抗噪耳機",
+            "product_summary": "",
+            "original_price": "定價: NT$4,000NT$4,000 優惠: NT$500 (13%)",
+            "current_price": "定價: NT$4,000NT$4,000 優惠: NT$500 (13%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "QuietPoint<sup>®</sup> 主動式抗噪技術可顯著降低環境噪音",
+                    "配備藍牙無線技術及線上麥克風與控制鍵，接聽來電、播放音樂及調節音量更方便",
+                    "方便的垂掛式設計",
+                    "0.6m導線可在無法使用無線操作或電池電量不足時提供有線連接",
+                    "滿電後最長可連續使用10小時",
+                    "內含矽膠耳塞（XS、S、M、L）、Comply™泡棉耳塞（M）",
+                    "內附30cm充電用USB導線和攜存袋"
+                ],
+                "features": {
+                    "label": [
+                        "型號",
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "工作溫度範圍",
+                        "NCC 型式認證號碼",
+                        "型式",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "輸出端子",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "工作溫度範圍",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "通話麥克風頻率響應",
+                        "重量",
+                        "附屬品",
+                        "另售"
+                    ],
+                    "value": [
+                        "ATH-ANC100BT",
+                        "藍牙標準規格Ver.4.2",
+                        "2.4GHz(2.402GHz～2.480GHz)",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "SBC",
+                        "SCMS-T",
+                        "20～20,000Hz",
+                        "5°C～40°C",
+                        "CCAJ18LP1CA0E9",
+                        "主動式降噪型",
+                        "Ø12 mm",
+                        "103dB/mW（使用降噪時）*、 102dB/mW（未使用降噪時）*　（*使用有線連接時）",
+                        "20～24,000Hz",
+                        "16Ω",
+                        "3.5mm鍍金立體聲迷你插頭，L型",
+                        "DC3.7V鋰聚合物電池",
+                        "約3小時（依使用條件而異）",
+                        "同時使用藍牙和降噪功能時：最長約10小時 / 使用降噪功能時：最長約20小時（依使用條件而異）",
+                        "5°C～40°C",
+                        "駐極體電容型",
+                        "全指向",
+                        "-36dB（1V/Pa，1kHz）",
+                        "50～4,000Hz",
+                        "約30g",
+                        "30cm USB充電線(USB Type-A / Micro USB Type-B)、0.6m導線（Ø3.5mm鍍金立體聲迷你插頭/L型）、 耳塞（XS、S、M、L）、COMPLY™耳塞（M）、攜存袋",
+                        "交換用耳塞"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    },
+    {
+        "product_imagesUrl": [
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-01.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-02.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-03.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-04.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-05.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-06.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-07.png",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-08.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-09.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-10.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-11.jpg",
+            "https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/2/ANC400BT-12.jpg"
+        ],
+        "product_info": {
+            "product_code": "ATH-ANC400BT",
+            "product_title": " 無線藍牙抗噪耳機麥克風組",
+            "product_summary": "",
+            "original_price": "定價: NT$8,800NT$8,800 優惠: NT$820 (9%)",
+            "current_price": "定價: NT$8,800NT$8,800 優惠: NT$820 (9%)"
+        },
+        "product_Detail": {
+            "content_title": [
+                "產品介紹",
+                "產品特性",
+                "相關檔案下載",
+                "注意事項"
+            ],
+            "product_content": {
+                "description": [
+                    "QUIETPOINT<sup>®&nbsp;</sup>主動式抗噪技術，實現業界最高等級的寂靜",
+                    "同時使用藍牙及抗噪功能時，最長可連續播放20小時",
+                    "除了優秀再現原音水準的aptX HD外，也支援aptX、AAC等各種高音質音訊編碼",
+                    "支援USB Type-C™有線連接，可於智慧型手機等設備提供無延遲的高品質聆聽體驗",
+                    "提供Ø3.5mm立體聲端子連接、適用於Hi-Res音源播放",
+                    "對應高解析音源，設有雙層振膜的專用設計Ø12mm驅動單元",
+                    "可快速確認周邊環境音的外部聲音功能",
+                    "對應鐵三角專用App「Connect」，可依據使用環境選擇抗噪等級"
+                ],
+                "features": {
+                    "label": [
+                        "通訊方式",
+                        "通訊使用頻段",
+                        "通訊距離",
+                        "調變方式",
+                        "支援Bluetooth協定",
+                        "支援編碼",
+                        "支援內容保護",
+                        "傳輸頻率範圍",
+                        "工作溫度範圍",
+                        "型號",
+                        "驅動單元",
+                        "輸出感度",
+                        "頻率響應",
+                        "輸入阻抗",
+                        "電源型式",
+                        "充電時間",
+                        "電池續航力",
+                        "通話麥克風型式",
+                        "通話麥克風指向特性",
+                        "通話麥克風感度",
+                        "通話麥克風頻率響應",
+                        "重量",
+                        "附屬品"
+                    ],
+                    "value": [
+                        "Bluetooth 標準規格Ver.5.0",
+                        "2.4GHz(2.402GHz～2.480GHz)",
+                        "視線良好範圍10m以內",
+                        "FHSS",
+                        "A2DP、AVRCP、HFP、HSP",
+                        "Qualcomm® aptX™ HD audio、Qualcomm® aptX™ audio、AAC、SBC",
+                        "SCMS-T",
+                        "20～20,000Hz",
+                        "5℃～40℃",
+                        "密閉式動圈型",
+                        "Ø12mm",
+                        "93dB/mW",
+                        "5～40,000Hz",
+                        "16Ω（單體部分）",
+                        "DC3.7V 鋰離子充電電池（内藏）",
+                        "約3小時",
+                        "最長約20小時（同時使用藍牙與抗噪功能時）",
+                        "電容型",
+                        "全指向性",
+                        "-42dB（1V/Pa, at 1kHz）",
+                        "50～4,000Hz",
+                        "約87g",
+                        "30cm USB充電線（USB Type-A/ Type-C™）、1.2m USB 耳機導線（USB Type-C™/ Type-C™）、1.2m 耳機導線 （Ø3.5mm 鍍金立體聲迷你插頭/L 型）、耳塞（XS/S/M/L）、COMPLY™耳塞（M）、飛機用變換插頭、攜存盒"
+                    ]
+                },
+                "warning": "\n                                                    ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。\n                            \n            ※ 實際的尺寸與重量會因配備的不同而有所差異 ※ 產品顏色會因網頁呈現而有些許差異，以收到實品為準 ※ 規格可能依機型配置而有所改變，產品規格若敘述有誤，請以實物為主 ※ 使用前請確實遵從產品說明書內之操作指示及注意事項 ※ 以上規格資料若有任何錯誤，以官方所公佈資料為準 ※ 因改良而有變更時，以官方所公佈資料為準，恕不另行通知 ※ 為了方便客戶及加速流程本公司不提供「換貨服務」，只能「退貨處理」  ■ 運送及其他說明\n\n送貨方式：透過宅配送達。 消費者訂購之商品若經配送兩次無法送達，再經本公司以電話與Email均無法聯繫逾三天者，本公司將取消該筆訂單，並且全額退款。\n送貨範圍：本島各地各縣市、澎湖部分地區、金門部分地區（大金門、小金門）、小琉球、馬祖全部地區、綠島 以下區域恕不提供宅急便包裹收送服務： 宜蘭縣-釣魚台列嶼(全)，高雄市-東沙(全)、南沙(全)，澎湖縣-馬公(虎井島、桶盤島)、望安(全)、七美(全)、白沙(大倉嶼、員貝嶼、鳥嶼、吉貝嶼)，金門縣-烈嶼(大膽島、二膽島)、烏坵(全)、台東縣-蘭嶼(全)\n\n注意！收件地址請勿為郵政信箱。"
+            }
+        }
+    }
+]
