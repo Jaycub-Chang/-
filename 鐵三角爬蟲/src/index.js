@@ -16,31 +16,31 @@ let server = app.listen(3000, function () {
 });
 
 //引入json在網頁看
-const sm_earphone_noline_page1 = require(__dirname + '/../data/耳塞式耳機_真無線_第1頁.json');
-const mic_page1 = require(__dirname + '/../data/專業麥克風_有線麥克風/專業麥克風_有線麥克風_第1頁.json');
-const lg_earphone_withline_page1 = require(__dirname + '/../data/耳罩式耳機_有線/耳罩式耳機_有線_第1頁.json');
-const lg_earphone_noline_page1 = require(__dirname + '/../data/耳罩式耳機_無線/耳罩式耳機_無線_第1頁.json');
+// const sm_earphone_noline_page1 = require(__dirname + '/../data/耳塞式耳機_真無線_第1頁.json');
+// const mic_page1 = require(__dirname + '/../data/專業麥克風_有線麥克風/專業麥克風_有線麥克風_第1頁.json');
+// const lg_earphone_withline_page1 = require(__dirname + '/../data/耳罩式耳機_有線/耳罩式耳機_有線_第1頁.json');
+// const lg_earphone_noline_page1 = require(__dirname + '/../data/耳罩式耳機_無線/耳罩式耳機_無線_第1頁.json');
 
 //建立路由
-app.get('/', async (req, res, next) => {
-    res.send(sm_earphone_noline_page1);
-});
-app.get('/mic', async (req, res, next) => {
-    res.send(mic_page1);
-});
-app.get('/lg_earphone_withline_page1', async (req, res, next) => {
-    res.send(lg_earphone_withline_page1);
-});
-app.get('/lg_earphone_noline_page1', async (req, res, next) => {
-    res.send(lg_earphone_noline_page1);
-});
+// app.get('/', async (req, res, next) => {
+//     res.send(sm_earphone_noline_page1);
+// });
+// app.get('/mic', async (req, res, next) => {
+//     res.send(mic_page1);
+// });
+// app.get('/lg_earphone_withline_page1', async (req, res, next) => {
+//     res.send(lg_earphone_withline_page1);
+// });
+// app.get('/lg_earphone_noline_page1', async (req, res, next) => {
+//     res.send(lg_earphone_noline_page1);
+// });
 
 
 //抓取檔案
 let productsData = [];
 //設定搜尋關鍵字
-const searchCategory = '專業麥克風';
-const searchKeyWord = '有線麥克風';
+const searchCategory = '耳罩式耳機';
+const searchKeyWord = '有線';
 let enterUrl = `https://www.audio-technica.com.tw/${searchCategory}/${searchKeyWord}`;
 
 
@@ -285,14 +285,14 @@ async function asyncArray(functionsList) {
 //   enterMenuPage >> getThisPageProductsLinks >> getPagesLinks >> goToProductPage  >> processData >> saveFileGoNextMenuPage >> {enterMenuPage ... } >> closeChannel
 
 
-// try {
-//     asyncArray([enterMenuPage, closeChannel]).then(async () => {
-//         console.log('完成所有程式');
-//     });
-// } catch (err) {
-//     console.log('try-catch: ');
-//     console.dir(err, { depth: null });
-// }
+try {
+    asyncArray([enterMenuPage, closeChannel]).then(async () => {
+        console.log('完成所有程式');
+    });
+} catch (err) {
+    console.log('try-catch: ');
+    console.dir(err, { depth: null });
+}
 
 
 
